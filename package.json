@@ -1,0 +1,17 @@
+{
+  "name": "tokai-dog-event-calendar-automation",
+  "version": "1.0.0",
+  "description": "東海4県の犬イベント情報を自動収集しGoogleカレンダーに登録するシステム",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node scripts/run.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.0",
+    "googleapis": "^144.0.0"
+  }
+}
