@@ -1,3 +1,10 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# 環境変数（ローカル手動実行用。中身はGitHub Secretsと同じ）
+.env
+
 # General
 .DS_Store
 .AppleDouble

@@ -3,7 +3,12 @@ name: weekly-dog-event-search
 on:
   schedule:
     - cron: '0 21 * * 0'   # 毎週月曜 6:00 JST（UTC日曜21:00）
-  workflow_dispatch: {}     # 手動実行用
+  workflow_dispatch:        # 手動実行用
+    inputs:
+      dry_run:
+        description: 'カレンダー登録とevents.json更新を行わず、抽出結果の確認のみ行う'
+        type: boolean
+        default: false
 
 jobs:
   collect-and-sync:
@@ -16,20 +21,21 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
 
       - name: Run collection & sync script
         env:
+          DRY_RUN: ${{ inputs.dry_run }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          GOOGLE_CSE_API_KEY: ${{ secrets.GOOGLE_CSE_API_KEY }}
-          GOOGLE_CSE_CX: ${{ secrets.GOOGLE_CSE_CX }}
           GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
           GOOGLE_CALENDAR_ID: ${{ secrets.GOOGLE_CALENDAR_ID }}
         run: npm start
 
       - name: Commit updated state
+        if: inputs.dry_run != true
         run: |
           git config user.name "event-bot"
           git config user.email "bot@users.noreply.github.com"

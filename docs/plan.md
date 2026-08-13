@@ -6,13 +6,15 @@
 
 東海4県（愛知・岐阜・三重・静岡）で開催される犬メインのイベント・マルシェ（例: わんにゃんドーム、犬市場 等）の開催情報を毎週自動収集し、専用のGoogleカレンダーに登録する。各イベントの来場者数は、公式発表があればその数値を、なければClaude APIによる予測値を「予測」と明記した上で備考欄に記載する。
 
-**方針**: GitHub Actions・Web検索・Google Calendar APIはすべて無料枠内で運用し、コストが発生するのはClaude API（情報抽出・来場者数のAI予測に用いる推論部分）のみに限定する。Instagram等SNSからの収集は行わない。
+**方針**: GitHub Actions・Google Calendar APIは無料枠内で運用し、コストはClaude API（情報抽出・来場者数のAI予測・Web検索）に限定する。Instagram等SNSからの収集は行わない。
+
+> 当初は「Web検索も無料枠（Google Custom Search API）で賄う」方針だったが、2026年1月のGoogle側の仕様変更によりウェブ全体検索が新規に利用できなくなったため、Claudeのweb_searchツールに切り替えた（4-1参照）。追加コストは月あたり約$0.35で、全体予算に対して誤差の範囲。
 
 ## 2. 全体フロー
 
 ```mermaid
 flowchart LR
-    A[GitHub Actions\n毎週月曜 6:00 JST] --> B[Web検索\nGoogle Custom Search API（無料）]
+    A[GitHub Actions\n毎週月曜 6:00 JST] --> B[Web検索\nClaude web_searchツール]
     A --> C[既知イベント公式サイト巡回\nweb_fetch（無料）]
     B --> D[情報統合・構造化\nClaude API]
     C --> D
@@ -32,20 +34,40 @@ flowchart LR
 - 対象イベント: 犬単独、または「わんにゃんドーム」のように犬猫混合でも犬の比重が大きいマルシェ・ドーム型イベント
 - 規模の目安: 個人の朝散歩オフ会等の小規模イベントは除外し、複数ブース出展・集客型のマルシェ／展示会規模を対象
 - 検索対象期間: 直近〜6ヶ月先に開催されるイベント（デフォルト。必要に応じて調整可）
+  - **実装済み**: `run.js` の `HORIZON_MONTHS` で期間を定義。抽出プロンプトに「本日」と「6ヶ月先」を動的注入したうえで、`run.js` 側でも開催日による機械的フィルタをかける二重構造。基準日はJST（`scripts/lib/date.js` の `todayJst`）— Actionsランナーは UTC で動くため、単純な `toISOString()` では実行日が1日ずれる
 
 ## 4. データ収集方法（完全無料構成）
 
-### 4-1. Web検索 — Google Custom Search JSON API（無料枠）
+### 4-1. Web検索 — Claude の web_search サーバーツール
 
-- GCPで「Programmable Search Engine」を作成し、Custom Search JSON APIを有効化（1日100クエリまで無料）
-- 毎週、以下のようなクエリを15〜25件程度実行:「東海 犬 イベント 2026」「愛知 犬 マルシェ」「わんにゃんドーム 次回」「犬市場 岡崎」等
-- 想定利用量（週20件 × 4.3週 ≒ 月86件）は無料枠（月3,000件相当）に対して十分余裕あり
+> **2026-08-13 変更**: 当初は Google Custom Search JSON API（無料枠）を使う設計だったが、
+> **2026年1月20日付で Programmable Search Engine の「ウェブ全体を検索」が新規エンジンでは選択できなくなった**。
+> 新規エンジンは最大50ドメインの「検索するサイト」方式のみで、未知のイベントを発見するという
+> 本システムの中核が成立しない（既存エンジンは2027年1月1日まで猶予、Custom Search JSON API自体も終息方向）。
+> このため Claude の web_search サーバーツールに切り替えた。
+
+- `scripts/lib/anthropic.js` の `webSearchTool()` で `web_search_20260209` を定義し、抽出呼び出しに同梱する
+- 検索は Anthropic のサーバー側で実行されるため、クライアント側の検索実装も検索用APIキーも不要
+- `user_location` に日本（`country: 'JP'` / `timezone: 'Asia/Tokyo'`）を指定して日本語圏の結果を優先させる
+- `max_uses: 8` で1回の実行あたりの検索回数を制限（$10 / 1,000検索 → 月あたり約$0.35）
+  - **注意**: `max_uses` はリクエスト単位の上限で、`pause_turn` でターンをまたぐとリセットされる。初回ドライランでは上限8に対し17回実行された。`runStructured` 側で累計を数え、残数を都度 `max_uses` に反映し、使い切ったら `tool_choice` で記録ツールを強制して打ち切る実装にしてある
+- クエリはモデルが状況に応じて組み立てる。県名・地域名と「犬 イベント」「ドッグイベント」「犬 マルシェ」の組み合わせ、
+  年の付与、公式サイトで次回未確定だったシリーズの個別検索を、システムプロンプトで指針として与えている
+- 検索と構造化抽出は1回のAPI呼び出しにまとまる（サーバー側ツールのため往復不要）。
+  サーバー側ループ上限に達した場合は `stop_reason: pause_turn` を検出して再開する
 
 ### 4-2. 既知イベントシリーズの公式サイト直接巡回（無料）
 
 - 既に把握している主要シリーズ（わんにゃんドーム、犬市場 等）の公式サイト・お知らせページURLをリスト化し、毎週`web_fetch`相当の処理で直接取得
 - 検索エンジン経由では拾いにくい「更新されたばかりの告知」も安定して取得できるため、4-1を補完する位置づけ
 - 費用は発生しない（単純なHTTP取得のみ）
+- 応答のないサイトで実行全体が止まらないよう、20秒のタイムアウトを設定
+
+> **わんにゃんドームのURL修正（2026-08-13）**: 当初 `https://wannyandome.com/` を登録していたが、
+> このドメインはさくらインターネットの初期ページ（403）を返すだけで機能しておらず、
+> HTTPSも共有証明書（`*.sakura.ne.jp`）のためホスト名不一致で接続できない。
+> 実体はテレビ愛知の `https://tv-aichi.co.jp/wannyan/` に移っている。
+> このURLは年を含まないため常に最新年の情報を返す（現在はわんにゃんドーム2027＝2027年2月13〜14日）。
 
 ### 4-3（見送り）Instagram等SNS収集
 
@@ -61,7 +83,19 @@ flowchart LR
    - 出展者数などの補助情報
 3. 予測結果は「約◯,000〜◯,000人（AI推定）」のように**幅**を持たせ、必ず「予測」であることを明記
 
-情報の構造化（検索結果 → イベント名/日程/会場等への変換）も同じくClaude APIで行う。Claude APIを使うのはこの「抽出」と「予測」の2箇所のみで、検索そのものには課金される機能（Claude内蔵のWeb検索ツール等）は使わない。
+**予測の是正（2026-08-13、初回ドライラン結果を受けて）**: 初回実行で3件すべてが12,000〜22,000人と過大に予測され、根拠にわんにゃんドームの実績（18,872人）が別シリーズの実績として流用されていた。原因は、予測モデルに会場の性質を判断する材料が渡っておらず、プロンプトが「分からなければ参考実績と同程度と仮定」する作りだったこと。対策として以下を実施:
+
+- 抽出時に `venue_type`（屋内展示場／屋外の公園・河川敷／商業施設／その他・不明）、`admission`（有料／無料／不明）、`booth_count` を取得し、予測モデルへ渡す
+- 予測プロンプトで、確認済み実績はわんにゃんドームのものだけであることを明示し、他シリーズへの流用を禁止
+- 会場種別ごとの規模感の違い（屋外無料は天候依存で数千人規模にとどまることも多い、商業施設内は専有面積が狭い等）を明示
+- 情報が乏しい場合は幅を広げるよう指示（上限が下限の2倍程度でも可）
+- `basis` に会場種別の判断と根拠を明記させ、未確認の数値を実績として書かせない
+
+情報の構造化（検索結果 → イベント名/日程/会場等への変換）も同じくClaude APIで行う。Claude APIを使うのは「Web検索」「抽出」「予測」の3箇所。
+
+**使用モデル（2026-08-13 決定）**: 抽出は判断精度が要るため `claude-sonnet-5`（adaptive thinking ＋ `effort: medium`）、来場者数予測は参考実績から幅を出すだけの単純タスクのため `claude-haiku-4-5` を使う。定義は `scripts/lib/anthropic.js` の `MODELS`。
+
+> 注意: Haiku 4.5 は世代が異なり `output_config.effort` を受け付けずエラーになる。`runStructured` は `thinking` / `effort` を渡された時だけリクエストに載せる設計にしてある。また Sonnet 5 は `thinking` を省略しても adaptive thinking が動き、`max_tokens` は「思考＋出力」の合計上限として働くため、抽出側は 16000 と余裕を持たせている。
 
 ### カレンダー備考欄フォーマット案
 
@@ -104,8 +138,6 @@ jobs:
       - name: Run collection & sync script
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          GOOGLE_CSE_API_KEY: ${{ secrets.GOOGLE_CSE_API_KEY }}
-          GOOGLE_CSE_CX: ${{ secrets.GOOGLE_CSE_CX }}
           GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
           GOOGLE_CALENDAR_ID: ${{ secrets.GOOGLE_CALENDAR_ID }}
         run: node scripts/run.js
@@ -123,40 +155,50 @@ jobs:
 ```
 /.github/workflows/weekly-dog-event-search.yml
 /scripts/
-  search_web.js          # Google Custom Search APIでのWeb検索（無料）
+  run.js                  # 上記を順に実行するエントリーポイント
   fetch_known_sources.js # 既知イベントシリーズの公式サイト巡回（無料）
   extract_events.js      # 検索結果 → 構造化イベント情報へ変換（Claude API）
   estimate_attendance.js # 来場者数予測（Claude API）
   sync_calendar.js       # Google Calendar API連携
-  run.js                  # 上記を順に実行するエントリーポイント
+  lib/
+    anthropic.js          # Claude API呼び出し共通処理（モデル定義・構造化出力）
+    googleCalendar.js     # Google Calendar APIクライアント
+    date.js               # JST基準の日付ユーティリティ
 /data/
   events.json             # 検出済みイベントの状態ファイル
   known_sources.json       # 巡回対象の公式サイトURL一覧（初期: わんにゃんドーム、犬市場の2シリーズ）
+/.env.example              # ローカル実行用の環境変数テンプレート
 /README.md
 ```
 
+データファイルは実行時のカレントディレクトリに依存しないよう、`import.meta.url` を基準に解決している。
+
 ## 10. コスト試算（月額目安）
 
-Anthropic公式レート（2026年8月時点）に基づく概算です。Claude Sonnet 5は2026年8月31日まで入力$2/出力$10（100万トークンあたり）の導入価格、9月以降は標準の$3/$15に戻ります。
+Anthropic公式レート（2026年8月時点）に基づく概算です。以下は**9月以降の標準価格**（Sonnet 5: 入力$3/出力$15、Haiku 4.5: 入力$1/出力$5、いずれも100万トークンあたり）で算出しています。
+
+> **Sonnet 5の導入価格（$2/$10）は2026年8月31日で終了します。** 8月中は下表より2〜3割安く収まります。
 
 | 項目 | 想定使用量 | 月額目安（USD） | 参考（円・1ドル150円換算） |
 |---|---|---|---|
 | GitHub Actions | 週1回・1回あたり5〜10分 | $0（無料枠内） | ¥0 |
-| Google Custom Search API | 週15〜25検索 × 月4.3週 ≒ 月86〜108件 | $0（1日100件・月3,000件相当の無料枠内） | ¥0 |
-| 既知サイト巡回（web_fetch） | — | $0 | ¥0 |
+| **Claude API — Web検索** | 1回あたり最大8検索 × 月4.3回 ≒ 月35件（$10 / 1,000検索） | 約$0.35 | 約¥53 |
+| 既知サイト巡回（HTTP取得） | — | $0 | ¥0 |
 | Google Calendar API | — | $0 | ¥0 |
-| **Claude API — トークン費用（抽出・予測のみ）** | Sonnet 5、週あたり入力4〜10万トークン／出力0.5〜1.5万トークン | 約$2〜6 | 約¥300〜900 |
-| **合計目安** | | **約$2〜6 / 月** | **約¥300〜900 / 月** |
+| **Claude API — 抽出（Sonnet 5）** | 月あたり入力17〜43万トークン／出力（思考含む）1〜3万トークン | 約$0.7〜1.8 | 約¥105〜270 |
+| **Claude API — 予測（Haiku 4.5）** | 月20〜65イベント × 入力約1,000／出力約300トークン | 約$0.05〜0.2 | 約¥8〜30 |
+| **合計目安** | | **約$1〜3 / 月** | **約¥150〜450 / 月** |
 
-- Instagram連携を見送り、検索もGoogle Custom Search APIの無料枠に切り替えたことで、コストはClaude APIのトークン費用のみに圧縮されました。
-- 初月はプロンプト調整・テスト実行で上振れする可能性があります。
-- さらに費用を抑えたい場合、抽出・予測の一部をClaude Haiku 4.5（$1/$5）に切り替えることで追加で30〜50%程度削減できる見込みです（精度とのトレードオフは要検証）。
+- Instagram連携を見送ったことで、コストはClaude APIのトークン費用とWeb検索料金のみに圧縮されました。
+- 当初は抽出・予測ともSonnet 5で月額$2〜6を見込んでいましたが、**予測をHaiku 4.5に分離し、抽出に `effort: medium` を指定した**ことで、9月の値上げを吸収したうえで下振れしています。
+- 初月はプロンプト調整・テスト実行で上振れする可能性があります。ドライラン（`npm run dry-run`）はカレンダーに書き込まずに抽出・予測を実行するため、調整中もトークン費用は発生します。
+- さらに費用を抑える余地としては、抽出の `effort` を `low` に落とす、公式サイト本文の切り出し上限（現在8,000文字）を下げる、といった選択肢があります（いずれも精度とのトレードオフは要検証）。
 
 ## 11. 導入ステップ（案）
 
-1. GCPプロジェクト作成: サービスアカウント発行（Calendar用）、Custom Search JSON API有効化＋Programmable Search Engine作成
+1. GCPプロジェクト作成: Calendar API有効化、サービスアカウント発行とJSONキー取得
 2. 専用Googleカレンダー作成、サービスアカウントに共有設定
-3. GitHubリポジトリ作成、Secrets登録（ANTHROPIC_API_KEY / GOOGLE_CSE_API_KEY / GOOGLE_CSE_CX / GOOGLE_SERVICE_ACCOUNT_KEY / GOOGLE_CALENDAR_ID）
+3. GitHubリポジトリ作成、Secrets登録（ANTHROPIC_API_KEY / GOOGLE_SERVICE_ACCOUNT_KEY / GOOGLE_CALENDAR_ID）
 4. 既知イベントシリーズ（わんにゃんドーム、犬市場 等）の公式サイトURLを`known_sources.json`にリスト化
 5. Web検索＋抽出パイプラインの実装・手動実行での精度確認
 6. 来場者数予測プロンプトの調整（過去実績データの与え方、表記フォーマットの確定）
@@ -171,4 +213,24 @@ Anthropic公式レート（2026年8月時点）に基づく概算です。Claude
 | 予測値の再更新 | 公式発表を検知した時点で自動的に「確定」表記へ更新する |
 | known_sources.jsonの初期リスト | わんにゃんドーム・犬市場の2シリーズから開始（追加は随時可能） |
 
-これで本計画書の未確定事項はすべて解消。次のアクションは「11. 導入ステップ」に沿った実装フェーズへの着手。
+### 追加の確定事項（2026-08-13 決定）
+
+| 項目 | 決定内容 |
+|---|---|
+| 使用モデル | 抽出=`claude-sonnet-5`（adaptive thinking ＋ effort: medium）／予測=`claude-haiku-4-5` |
+| 日付の基準 | JST。Actionsランナーは UTC のため `scripts/lib/date.js` の `todayJst` で補正 |
+| 期間フィルタ | プロンプト指示 ＋ `run.js` での機械的フィルタの二重構造 |
+| ドライラン | `DRY_RUN=1` でCalendarクライアントを生成せず、Google認証情報なしで抽出精度を確認可能 |
+| events.jsonの保持期間 | 終了から365日を過ぎたレコードは自動除去（カレンダー側の予定は残す） |
+| Web検索の経路 | Google Custom Search API から Claude の `web_search_20260209` へ変更（Google側の仕様変更のため。4-1参照） |
+| 必要なSecret | 5個 → **3個**（`GOOGLE_CSE_API_KEY` / `GOOGLE_CSE_CX` が不要になった） |
+
+## 13. 進捗
+
+- [x] 導入ステップ 1〜3 のうち、リポジトリ側の準備（構成整備・依存導入・実行可能化）
+- [x] 導入ステップ 4: `known_sources.json` の初期リスト（わんにゃんドーム・犬市場）
+- [x] 導入ステップ 5 の前半: Web検索＋抽出パイプラインの実装
+- [ ] **導入ステップ 1〜3 のうち外部サービス設定**: GCPプロジェクト作成、Calendar API有効化、サービスアカウント発行、専用カレンダー作成と共有設定、GitHub Secrets登録 ← **次のアクション（ユーザー作業）**
+- [ ] 導入ステップ 5 の後半: `npm run dry-run` での精度確認
+- [ ] 導入ステップ 6: 来場者数予測プロンプトの調整
+- [ ] 導入ステップ 7: Actionsへのスケジュール登録と2〜3回分の検証

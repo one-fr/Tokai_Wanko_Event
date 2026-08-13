@@ -8,10 +8,12 @@
     "node": ">=20"
   },
   "scripts": {
-    "start": "node scripts/run.js"
+    "start": "node scripts/run.js",
+    "dev": "node --env-file=.env scripts/run.js",
+    "dry-run": "DRY_RUN=1 node --env-file=.env scripts/run.js"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.32.0",
-    "googleapis": "^144.0.0"
+    "@anthropic-ai/sdk": "^0.116.0",
+    "googleapis": "^174.0.1"
   }
 }

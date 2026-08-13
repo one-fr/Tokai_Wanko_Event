@@ -1,6 +1,7 @@
 import { readFile } from 'node:fs/promises';
 
-const KNOWN_SOURCES_PATH = 'data/known_sources.json';
+// 実行時のカレントディレクトリに依存しないよう、スクリプト位置を基準に解決する
+const KNOWN_SOURCES_PATH = new URL('../data/known_sources.json', import.meta.url);
 
 /**
  * known_sources.jsonに登録された公式サイトを直接取得し、本文テキストを返す。
@@ -12,8 +13,11 @@ export async function fetchKnownSources(path = KNOWN_SOURCES_PATH) {
 
   for (const source of list) {
     try {
+      // 応答がないサイトで実行全体が止まらないようタイムアウトを設ける
       const res = await fetch(source.official_url, {
         headers: { 'User-Agent': 'tokai-dog-event-bot/1.0 (+https://www.one-fr.com)' },
+        redirect: 'follow',
+        signal: AbortSignal.timeout(20000),
       });
       if (!res.ok) {
         console.warn(`[fetch_known_sources] 取得失敗 (${source.series_id}): HTTP ${res.status}`);
