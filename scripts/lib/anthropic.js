@@ -102,7 +102,10 @@ export async function runStructured({
     if (thinking) body.thinking = thinking;
     if (effort) body.output_config = { effort };
 
-    const message = await client.messages.create(body);
+    // SDKは max_tokens から所要時間を見積もり、10分を超えうる非ストリーミング要求を拒否する
+    // （閾値は 128000 * 10 / 60 ≒ 21,333 トークン）。抽出は32000を使うためこれに掛かる。
+    // ストリーミングで受け取り、finalMessage() で通常のMessageと同じ形に組み立てる。
+    const message = await client.messages.stream(body).finalMessage();
 
     const searchesThisTurn = message.content.filter(
       (b) => b.type === 'server_tool_use' && b.name === 'web_search'
