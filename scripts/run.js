@@ -123,6 +123,9 @@ function buildId(ev) {
 function guessSeriesId(name) {
   if (name.includes('わんにゃんドーム')) return 'wannyandome';
   if (name.includes('犬市場')) return 'inuichiba';
+  if (name.includes('インターペット')) {
+    return name.includes('大阪') ? 'interpets_osaka' : 'interpets_tokyo';
+  }
   return null;
 }
 
