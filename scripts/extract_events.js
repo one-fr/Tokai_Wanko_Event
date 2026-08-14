@@ -60,6 +60,13 @@ const TOOL = {
   },
 };
 
+// 1回の実行で収集を目指すイベント件数。月1回実行のため取りこぼしを避けて広めに探す。
+// あくまで目標であり、基準を満たさないイベントを件数合わせで含めさせないこと。
+const TARGET_EVENTS = 20;
+
+// web_search の実行回数上限。目標件数を満たすには4県ぶんの検索が要るため多めに確保する。
+const MAX_SEARCHES = 25;
+
 function buildSystem({ today, horizon }) {
   return `あなたは東海4県（愛知・岐阜・三重・静岡）の犬関連イベント情報を収集するアシスタントです。
 
@@ -70,10 +77,19 @@ function buildSystem({ today, horizon }) {
 2. 検索結果と公式サイト本文を突き合わせ、実際に開催が確認できる「犬メイン、または犬猫混合でも犬の比重が大きいマルシェ・ドーム型イベント」を特定する
 3. record_events ツールを呼び出して結果を記録する
 
+## 目標件数
+
+**${TARGET_EVENTS}件程度**の収集を目標とします。この実行は月に1度しか行われないため、取りこぼしを避けて網羅的に探してください。
+
+ただし**件数合わせを優先してはいけません**。下記の厳守事項を満たさないイベントを件数のために含めることは、目標未達より悪い結果です。基準を満たすものが${TARGET_EVENTS}件に届かなければ、届いた分だけを返してください。
+
 検索の指針:
-- 県名や地域名（東海／愛知／岐阜／三重／静岡／名古屋）と「犬 イベント」「ドッグイベント」「犬 マルシェ」「ペットイベント」を組み合わせる
-- 年を含めて検索する（${today.slice(0, 4)}年・${horizon.slice(0, 4)}年）
+- 4県すべて（愛知・岐阜・三重・静岡）を個別に検索し、特定の県に偏らないようにする
+- 県名や地域名（東海／愛知／岐阜／三重／静岡／名古屋／浜松／岐阜市／四日市 等）と
+  「犬 イベント」「ドッグイベント」「犬 マルシェ」「ペットイベント」「わんこ イベント」を組み合わせる
+- 年月を含めて検索する（${today.slice(0, 4)}年・${horizon.slice(0, 4)}年）
 - 公式サイト本文で次回開催が未確定だったシリーズは、シリーズ名で個別に検索して最新の告知を確認する
+- 大型商業施設・公園・ドッグラン・道の駅などの会場側の告知ページも探す
 - 検索結果が薄い場合はクエリを変えて追加検索する
 
 会場・住所の扱い:
@@ -109,6 +125,7 @@ function buildSystem({ today, horizon }) {
 export async function extractEvents({ knownSourcePages, today, horizon }) {
   const userContent = [
     `${today} 時点で、${today} 〜 ${horizon} に東海4県で開催される犬イベントを調べて記録してください。`,
+    `目標は${TARGET_EVENTS}件程度ですが、基準を満たさないものを件数合わせで含めないでください。`,
     '',
     '既知の主要シリーズについては、公式サイトの本文を以下に添付します。',
     'ただしこれだけでは新規イベントを発見できないため、必ずweb_searchも実行してください。',
@@ -122,12 +139,13 @@ export async function extractEvents({ knownSourcePages, today, horizon }) {
     system: buildSystem({ today, horizon }),
     userContent,
     tool: TOOL,
-    serverTools: [webSearchTool({ maxUses: 10 })],
+    serverTools: [webSearchTool({ maxUses: MAX_SEARCHES })],
     // Sonnet 5 は thinking 省略時も adaptive thinking が動く。max_tokens は
-    // 「思考＋出力」の合計上限なので、明示指定したうえで余裕を持たせる。
+    // 「思考＋出力」の合計上限。目標20件ぶんの構造化出力に思考トークンが加わるため、
+    // 10件で16000だった設定から引き上げておく。
     thinking: { type: 'adaptive' },
     effort: 'medium',
-    maxTokens: 16000,
+    maxTokens: 32000,
   });
   return events;
 }

@@ -1,8 +1,11 @@
-name: weekly-dog-event-search
+name: monthly-dog-event-search
 
 on:
   schedule:
-    - cron: '0 21 * * 0'   # 毎週月曜 6:00 JST（UTC日曜21:00）
+    # 毎月1日 9:00 JST（UTC 1日 0:00）
+    # JST 6:00 に合わせるにはUTCで「前月末日21:00」の指定が必要だが、
+    # 標準cronに月末日の表記がないため実現できない。1日に確実に走る9:00 JSTとする。
+    - cron: '0 0 1 * *'
   workflow_dispatch:        # 手動実行用
     inputs:
       dry_run:
@@ -13,6 +16,9 @@ on:
 jobs:
   collect-and-sync:
     runs-on: ubuntu-latest
+    # 検索25回＋イベント件数ぶんの予測呼び出しで数分かかる。
+    # 想定外に長引いた場合に無料枠を食い潰さないよう上限を設ける。
+    timeout-minutes: 30
     permissions:
       contents: write
     steps:
