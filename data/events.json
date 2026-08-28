@@ -141,24 +141,24 @@
     "id": "海津アクア-木曽三川わんこマルシェ2026秋-2026-10-24",
     "series_id": null,
     "name": "海津アクア×木曽三川わんこマルシェ2026秋",
-    "prefecture": "",
-    "venue": "国営木曽三川公園アクアワールド水郷パークセンター",
-    "address": "国営木曽三川公園アクアワールド水郷パークセンター",
+    "prefecture": "岐阜県",
+    "venue": "国営木曽三川公園 アクアワールド水郷パークセンター",
+    "address": "岐阜県海津市",
     "start_date": "2026-10-24",
-    "end_date": "2026-10-24",
+    "end_date": "2026-10-25",
     "source_url": "https://wannyan-smile.com/column-list/c1/",
-    "venue_type": "その他・不明",
-    "admission": "不明",
+    "venue_type": "屋外の公園・河川敷",
+    "admission": "無料",
     "booth_count": null,
     "attendance": {
       "status": "predicted",
       "min": 1500,
-      "max": 3500,
-      "basis": "屋外公園での1日間イベントと判断。わんにゃんドーム（屋内有料展示場2日間で1.5〜2万人規模）とは異なり、屋外無料の公園イベントは天候や立ち寄り客の影響を受けやすく、規模は大幅に小さくなることが多い。具体的な出展ブース数や過去実績が不明であるため、保守的に1,500〜3,500人の幅で予測。",
-      "collected_at": "2026-08-13"
+      "max": 4000,
+      "basis": "屋外公園・無料形式のペットマルシェ。屋内有料展示会（わんにゃんドーム：2日間1.5～2万人）とは異なり、天候影響と通りすがり立ち寄りが大きく、また10月秋季開催であることを考慮し、屋外無料ペットイベントの一般的な規模として2日間計1,500～4,000人と保守的に予測。",
+      "collected_at": "2026-08-28"
     },
     "calendar_event_id": "gnhig7064da7cifiosdh9lbe0s",
-    "last_checked": "2026-08-14"
+    "last_checked": "2026-08-28"
   },
   {
     "id": "犬市場-in-okazaki-2026-autumn-2026-11-28",
@@ -181,7 +181,7 @@
       "collected_at": "2026-08-14"
     },
     "calendar_event_id": "umsif320gclo8u7u4nebh08n88",
-    "last_checked": "2026-08-14"
+    "last_checked": "2026-08-28"
   },
   {
     "id": "犬市場-candy-palette-in-三井アウトレットパーク岡崎-2026-12-12",
@@ -204,7 +204,7 @@
       "collected_at": "2026-08-14"
     },
     "calendar_event_id": "n93rpa44tdgag1uvbgboaghovc",
-    "last_checked": "2026-08-14"
+    "last_checked": "2026-08-28"
   },
   {
     "id": "犬祭りテラス-2026-12-13",
@@ -250,7 +250,7 @@
       "collected_at": "2026-08-14"
     },
     "calendar_event_id": "vb6tb3bq3o03q475dqcjmqp4ls",
-    "last_checked": "2026-08-14"
+    "last_checked": "2026-08-28"
   },
   {
     "id": "犬祭り-テラスゲート土岐--2026-08-29",
@@ -320,5 +320,74 @@
     },
     "calendar_event_id": "cd2v2okt01kagk5g38r320mf24",
     "last_checked": "2026-08-14"
+  },
+  {
+    "id": "犬祭り-in-テラスゲート土岐-2026-08-29",
+    "series_id": null,
+    "name": "犬祭り in テラスゲート土岐",
+    "prefecture": "岐阜県",
+    "venue": "テラスゲート土岐",
+    "address": "岐阜県土岐市",
+    "start_date": "2026-08-29",
+    "end_date": "2026-08-29",
+    "source_url": "https://inumatsuri.com/",
+    "venue_type": "商業施設",
+    "admission": "不明",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 3000,
+      "max": 7000,
+      "basis": "商業施設内での1日間開催のペットイベントと判断。商業施設は通常の商業通行客が流入するため、屋内展示場の有料イベント（わんにゃんドーム：2日間1.5万～2万人規模）とは異なり、イベント目的の専有来場者は大幅に少なくなることが予想される。ブース数や入場料などの詳細情報が不足しているため、保守的に幅を広げて推定。",
+      "collected_at": "2026-08-28"
+    },
+    "calendar_event_id": "ror02hki3vj5k039orc2bmm1d4",
+    "last_checked": "2026-08-28"
+  },
+  {
+    "id": "犬祭り-in-テラスゲート土岐-2026-09-12",
+    "series_id": null,
+    "name": "犬祭り in テラスゲート土岐",
+    "prefecture": "岐阜県",
+    "venue": "テラスゲート土岐",
+    "address": "岐阜県土岐市",
+    "start_date": "2026-09-12",
+    "end_date": "2026-09-12",
+    "source_url": "https://inumatsuri.com/",
+    "venue_type": "商業施設",
+    "admission": "不明",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 1000,
+      "max": 4000,
+      "basis": "商業施設内での1日間開催イベントと判断。屋内展示場の有料イベントと異なり、施設の通常来客が流入するため専有スペースでのイベント目的来場者は相対的に少なくなりやすい傾向がある。具体的なブース数や過去実績が不明のため、保守的に1,000～4,000人の幅で予測。",
+      "collected_at": "2026-08-28"
+    },
+    "calendar_event_id": "tt7qkabh76k5db1cc9ifo1gbl8",
+    "last_checked": "2026-08-28"
+  },
+  {
+    "id": "犬祭り-in-テラスゲート土岐-2026-12-13",
+    "series_id": null,
+    "name": "犬祭り in テラスゲート土岐",
+    "prefecture": "岐阜県",
+    "venue": "テラスゲート土岐",
+    "address": "岐阜県土岐市",
+    "start_date": "2026-12-13",
+    "end_date": "2026-12-13",
+    "source_url": "https://inumatsuri.com/",
+    "venue_type": "商業施設",
+    "admission": "不明",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 1500,
+      "max": 3500,
+      "basis": "商業施設内での1日開催イベントと判断。商業施設は通常来客の流入が見込める一方、専有スペースは屋内展示場より狭いと推定され、イベント目的の来場者数は限定的と考えられるため、わんにゃんドーム（屋内有料展示場・2日間で1.5〜2万人規模）より大幅に少ない規模で予測。",
+      "collected_at": "2026-08-28"
+    },
+    "calendar_event_id": "bvspr2pbamcvrfgdiuqa3hg7g4",
+    "last_checked": "2026-08-28"
   }
 ]
