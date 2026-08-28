@@ -4,15 +4,62 @@ import { todayJst } from './lib/date.js';
 // 終了から この日数 を過ぎたイベントは events.json から落とす（状態ファイルの肥大化防止）
 const RETENTION_DAYS = 365;
 
+// イベント名の類似度がこの値以上なら同一イベントとみなす。
+// 実測: 「犬祭りテラス」⇔「犬祭り in テラスゲート土岐」= 0.47、
+//       「デカケルわんこびより in モリコロパーク」⇔「海津アクア×木曽三川わんこマルシェ2026秋」= 0.10
+const NAME_SIMILARITY_THRESHOLD = 0.4;
+
+const normalize = (s) => (s ?? '').replace(/[\s　]/g, '').toLowerCase();
+
+/**
+ * 文字バイグラムのDice係数（0〜1）。
+ * 日本語は単語境界がないため、形態素解析なしで表記ゆれを吸収できるこの方式を使う。
+ */
+export function nameSimilarity(a, b) {
+  if (a.length < 2 || b.length < 2) return a === b ? 1 : 0;
+  const bigrams = (s) => {
+    const m = new Map();
+    for (let i = 0; i < s.length - 1; i++) {
+      const g = s.slice(i, i + 2);
+      m.set(g, (m.get(g) ?? 0) + 1);
+    }
+    return m;
+  };
+  const A = bigrams(a);
+  const B = bigrams(b);
+  let intersection = 0;
+  let total = 0;
+  for (const [g, n] of A) {
+    total += n;
+    if (B.has(g)) intersection += Math.min(n, B.get(g));
+  }
+  for (const [, n] of B) total += n;
+  return total === 0 ? 0 : (2 * intersection) / total;
+}
+
 /**
  * 「開催日＋イベント名の緩い一致（表記ゆれ許容）」で同一イベントかどうかを判定する。
+ *
+ * 開催日の一致は必須条件のまま。同名シリーズの別開催回（犬祭り 8/29・9/12・12/13 など）を
+ * 誤って統合しないため、ここは緩めない。
+ *
+ * 名称は部分一致だけでは「犬祭りテラス」「犬祭り（テラスゲート土岐）」「犬祭り in テラスゲート土岐」の
+ * ような揺れを吸収できず、実際に同一イベントが3件重複登録された。Dice係数による類似判定を追加する。
  */
-function isSameEvent(a, b) {
+export function isSameEvent(a, b) {
   if (a.start_date !== b.start_date) return false;
-  const normalize = (s) => s.replace(/[\s　]/g, '').toLowerCase();
+
   const na = normalize(a.name);
   const nb = normalize(b.name);
-  return na.includes(nb) || nb.includes(na);
+  if (na.includes(nb) || nb.includes(na)) return true;
+  if (nameSimilarity(na, nb) >= NAME_SIMILARITY_THRESHOLD) return true;
+
+  // 名称が大きく違っても、同日・同会場なら同一イベントとみなす（取りこぼしの保険）
+  const va = normalize(a.venue);
+  const vb = normalize(b.venue);
+  if (va && vb && (va.includes(vb) || vb.includes(va))) return true;
+
+  return false;
 }
 
 /**
