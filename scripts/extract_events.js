@@ -60,8 +60,31 @@ const TOOL = {
           ],
         },
       },
+      candidates: {
+        type: 'array',
+        description:
+          '東海4県（およびインターペット）で見つけたイベントを、除外したものも含めて全件記録する。' +
+          'events に採用したものもここに含めること。取りこぼしと意図的な除外を区別するための記録',
+        items: {
+          type: 'object',
+          properties: {
+            name: { type: 'string', description: 'イベント名' },
+            date: {
+              type: 'string',
+              description: '開催開始日。YYYY-MM-DD が分からなければ情報源の表記のまま',
+            },
+            source_url: { type: 'string', description: 'このイベントを見つけた情報源のURL' },
+            included: { type: 'boolean', description: 'events に採用したかどうか' },
+            reason: {
+              type: 'string',
+              description: 'included が false の場合の除外理由。採用した場合は空文字',
+            },
+          },
+          required: ['name', 'included'],
+        },
+      },
     },
-    required: ['events'],
+    required: ['events', 'candidates'],
   },
 };
 
@@ -77,10 +100,17 @@ function buildSystem({ today, horizon }) {
 
 本日は ${today} です。抽出対象は ${today} 〜 ${horizon}（6ヶ月先）に開催されるイベントに限ります。
 
-手順:
+手順（この順序で行うこと）:
 1. web_search ツールで東海4県の犬イベント情報を検索する。与えられた公式サイト本文だけでは新規イベントを発見できないため、検索は必ず行うこと
-2. 検索結果と公式サイト本文を突き合わせ、実際に開催が確認できる「犬メイン、または犬猫混合でも犬の比重が大きいマルシェ・ドーム型イベント」を特定する
-3. record_events ツールを呼び出して結果を記録する
+2. **除外の判断をする前に**、見つかったイベントを candidates として全件洗い出す。
+   複数の都道府県のイベントが並ぶ集約ページ・まとめ記事では、**東海4県のものを1件ずつ拾い漏らさないこと**。
+   「開催日：YYYY/MM/DD」形式で列挙されたリストは、上から順に最後まで確認する。
+   この段階では除外基準を適用せず、東海4県で開催される犬関連イベントは疑わしいものも含めてすべて挙げる
+3. candidates の1件ずつに厳守事項を適用し、基準を満たすものだけを events に入れる。
+   除外したものは candidates 側で included=false とし、reason に理由を書く
+4. record_events ツールで candidates と events の両方を記録する
+
+candidates は events を含む上位集合になる。events にあって candidates に無い、という状態は誤り。
 
 ## 目標件数
 
@@ -143,7 +173,7 @@ export async function extractEvents({ knownSourcePages, today, horizon }) {
     ...knownSourcePages.map((p) => `## ${p.name} (${p.url})\n参考情報: ${p.notes}\n本文: ${p.text}`),
   ].join('\n');
 
-  const { events } = await runStructured({
+  const { events, candidates } = await runStructured({
     model: MODELS.extract,
     system: buildSystem({ today, horizon }),
     userContent,
@@ -156,5 +186,5 @@ export async function extractEvents({ knownSourcePages, today, horizon }) {
     effort: 'medium',
     maxTokens: 32000,
   });
-  return events;
+  return { events, candidates: candidates ?? [] };
 }

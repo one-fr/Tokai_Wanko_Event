@@ -33,15 +33,32 @@ async function main() {
   console.log('Claudeによる検索・抽出を実行中...');
 
   // Web検索はAnthropicのサーバー側ツールで行うため、ここでは呼び出さない
-  const extracted = await extractEvents({ knownSourcePages, today, horizon });
-  console.log(`抽出されたイベント: ${extracted.length}件`);
+  const { events: extracted, candidates } = await extractEvents({
+    knownSourcePages,
+    today,
+    horizon,
+  });
+
+  // 候補と除外理由を必ず残す。「取りこぼし」と「意図的な除外」を後から区別するため。
+  // 除外理由が期間外・県外・小規模以外のものは、抽出基準の見直しを検討する材料になる。
+  console.log(`検出候補: ${candidates.length}件 / うち採用: ${extracted.length}件`);
+  const excludedCandidates = candidates.filter((c) => !c.included);
+  if (excludedCandidates.length > 0) {
+    console.log(`除外された候補: ${excludedCandidates.length}件`);
+    for (const c of excludedCandidates) {
+      console.log(`  - ${c.name}${c.date ? ` (${c.date})` : ''} ※${c.reason || '理由の記載なし'}`);
+    }
+  }
+  if (candidates.length > 0 && candidates.length < extracted.length) {
+    console.warn('[警告] 候補数が採用数を下回っています。candidates の記録漏れの可能性があります');
+  }
 
   // プロンプトでも期間を指示しているが、モデルの判断だけに委ねず機械的に再フィルタする。
   // これは plan.md 6章「開催終了・次回未発表のイベントは登録しない」も同時に満たす。
   const inRange = extracted.filter((ev) => isWithinRange(ev, today, horizon));
-  const dropped = extracted.length - inRange.length;
-  if (dropped > 0) {
-    console.log(`期間外として除外: ${dropped}件（${today} 〜 ${horizon} の範囲外）`);
+  const outOfRange = extracted.length - inRange.length;
+  if (outOfRange > 0) {
+    console.log(`期間外として除外: ${outOfRange}件（${today} 〜 ${horizon} の範囲外）`);
   }
 
   const collectedAt = today;
