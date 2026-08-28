@@ -143,6 +143,8 @@ function guessSeriesId(name) {
   if (name.includes('インターペット')) {
     return name.includes('大阪') ? 'interpets_osaka' : 'interpets_tokyo';
   }
+  // 「wandarake marche 51&52」「wandarake fest! 47&48」「わんだらけマルシェ」など表記が揺れる
+  if (/wandarake|わんだらけ/i.test(name)) return 'wandarake';
   return null;
 }
 

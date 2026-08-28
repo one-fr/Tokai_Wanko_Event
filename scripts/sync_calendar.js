@@ -49,6 +49,13 @@ export function nameSimilarity(a, b) {
 export function isSameEvent(a, b) {
   if (a.start_date !== b.start_date) return false;
 
+  // シリーズが特定できていて一致するなら、名称の表記が英語/日本語で食い違っても同一とみなす。
+  // 例: 公式表記「wandarake marche 51&52」と既存レコード「わんだらけ」は文字が全く重ならず、
+  //     類似度では判定できない。
+  // 同一シリーズが同日に別会場で複数開催する可能性は残るが、これらのシリーズは
+  // 開催日をずらして巡回するのが通例であり、重複登録を許すより実害が小さい。
+  if (a.series_id && b.series_id && a.series_id === b.series_id) return true;
+
   const na = normalize(a.name);
   const nb = normalize(b.name);
   if (na.includes(nb) || nb.includes(na)) return true;

@@ -12,6 +12,12 @@
     "notes": "WAN'S team主催。年2〜3回（春・夏夜市・秋等）開催。主会場は愛知県岡崎公園乙川河川緑地で、会場は屋外の河川敷、入場は無料。1回あたり約150〜300ブース規模。商業施設での派生開催もある。来場者数の公式発表は確認できていない"
   },
   {
+    "series_id": "wandarake",
+    "name": "wandarake marche（わんだらけマルシェ）",
+    "official_url": "https://www.wandarake.buddys.life/",
+    "notes": "年数回開催の大規模わんこマルシェ。会場は回によって変わる（愛知県弥富市 富浜緑地、名古屋港ガーデンふ頭ひがし広場など）。屋外・有料（大人1,500円／中高生500円／小学生以下無料）。日本最大規模を称し出店数が多い。トップページに直近回の開催日・会場・参加費が記載される。回次は「marche 51&52」「fest 47&48」のように連番で、名称も marche / fest と揺れるため、シリーズ名は「wandarake」で照合すること"
+  },
+  {
     "series_id": "interpets_tokyo",
     "name": "インターペット東京",
     "official_url": "https://interpets.jp.messefrankfurt.com/tokyo/ja/facts-figures.html",
