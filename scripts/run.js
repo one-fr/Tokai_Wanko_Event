@@ -4,6 +4,7 @@ import { extractEvents } from './extract_events.js';
 import { estimateAttendance } from './estimate_attendance.js';
 import { syncCalendar } from './sync_calendar.js';
 import { addMonths, todayJst } from './lib/date.js';
+import { updateDiscoveredSources } from './lib/sources.js';
 
 // 実行時のカレントディレクトリに依存しないよう、スクリプト位置を基準に解決する
 const EVENTS_PATH = new URL('../data/events.json', import.meta.url);
@@ -24,12 +25,16 @@ async function main() {
   }
 
   const [knownSourcePages, existingEventsRaw] = await Promise.all([
-    fetchKnownSources(),
+    fetchKnownSources({ today, horizon }),
     readFile(EVENTS_PATH, 'utf-8'),
   ]);
   const existingEvents = JSON.parse(existingEventsRaw);
 
-  console.log(`公式サイト取得: ${knownSourcePages.length}件 / 既存イベント: ${existingEvents.length}件`);
+  const curatedCount = knownSourcePages.filter((p) => p.kind !== 'discovered').length;
+  const discoveredCount = knownSourcePages.length - curatedCount;
+  console.log(
+    `情報源取得: ${knownSourcePages.length}件（公式${curatedCount} / 学習済み${discoveredCount}） / 既存イベント: ${existingEvents.length}件`
+  );
   console.log('Claudeによる検索・抽出を実行中...');
 
   // Web検索はAnthropicのサーバー側ツールで行うため、ここでは呼び出さない
@@ -51,6 +56,15 @@ async function main() {
   }
   if (candidates.length > 0 && candidates.length < extracted.length) {
     console.warn('[警告] 候補数が採用数を下回っています。candidates の記録漏れの可能性があります');
+  }
+
+  // 今回イベントを供給したURLを情報源として学習し、次回以降は検索せず直接巡回する。
+  // 検索予算を未知イベントの発見に回すための仕組み。
+  if (!DRY_RUN) {
+    const { added, removed, total } = await updateDiscoveredSources(extracted);
+    for (const s of added) console.log(`[情報源を学習] ${s.url}（${s.events_seen}件を供給）`);
+    for (const s of removed) console.log(`[情報源を削除] ${s.url}（${s.misses}回連続でヒットなし、または上限超過）`);
+    console.log(`学習済み情報源: ${total}件`);
   }
 
   // プロンプトでも期間を指示しているが、モデルの判断だけに委ねず機械的に再フィルタする。

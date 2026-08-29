@@ -8,7 +8,9 @@
 
 ## 主な機能
 
-- 東海4県の犬イベント情報を、ClaudeのWeb検索ツール＋既知イベントシリーズの公式サイト巡回で収集
+- 公式サイトとイベントまとめサイトを毎回直接巡回して確実に収集
+- ClaudeのWeb検索ツールは「未知のイベントの発見」に専念
+- イベントを2件以上供給したサイトは自動的に巡回対象へ学習（最大8件、3回連続で不発なら削除）
 - Claude APIで検索結果を構造化イベント情報（名称・日程・会場・来場者数）へ変換
 - 来場者数が未発表の場合、Claude APIが類似イベントの実績等をもとに幅を持たせて予測（「予測」と明記）
 - Google Calendar APIで専用カレンダーへ自動登録・更新
@@ -19,7 +21,7 @@
 ```mermaid
 flowchart LR
     A[GitHub Actions\n毎月1日 9:00 JST] --> B[Web検索\nClaude web_searchツール]
-    A --> C[既知イベント公式サイト巡回]
+    A --> C[情報源の直接巡回\n公式サイト＋学習済みまとめサイト]
     B --> D[情報統合・構造化\nClaude API]
     C --> D
     D --> E{events.json\nと突合}
@@ -38,17 +40,19 @@ flowchart LR
 /.github/workflows/monthly-dog-event-search.yml
 /scripts/
   run.js                  # エントリーポイント
-  fetch_known_sources.js # 既知イベントシリーズの公式サイト巡回
+  fetch_known_sources.js # 情報源の直接巡回（公式サイト＋学習済みまとめサイト）
   extract_events.js      # 検索結果 → 構造化イベント情報へ変換（Claude API）
   estimate_attendance.js # 来場者数予測（Claude API）
   sync_calendar.js       # Google Calendar API連携
   lib/
     anthropic.js          # Claude API呼び出し共通処理（モデル定義・構造化出力）
+    sources.js            # 巡回対象の読み込みと自動学習
     googleCalendar.js     # Google Calendar APIクライアント
     date.js               # JST基準の日付ユーティリティ
 /data/
   events.json             # 検出済みイベントの状態ファイル
-  known_sources.json       # 巡回対象の公式サイトURL一覧
+  known_sources.json       # 巡回対象の公式サイトURL一覧（手で管理）
+  discovered_sources.json  # 実行結果から自動学習したイベントまとめサイト（自動管理）
 /docs/
   plan.md                  # 計画書（設計・意思決定の経緯）
 /.env.example              # ローカル実行用の環境変数テンプレート
@@ -117,7 +121,8 @@ npm run dev            # 本番実行: カレンダー登録・events.json更新
 - **名寄せ**: 開催日 ＋ イベント名の緩い一致（表記ゆれ許容）で同一イベントと判定
 - **開催終了・次回未発表のイベント**: 公式発表が出るまでカレンダーには登録しない
 - **予測値の再更新**: 公式発表を検知した時点で自動的に「確定（公式発表）」表記に更新
-- **known_sources.jsonの初期リスト**: わんにゃんドーム・犬市場の2シリーズから開始（随時追加可能）
+- **巡回対象**: `known_sources.json`（公式サイト・手で管理）と `discovered_sources.json`（まとめサイト・自動学習）の2系統。
+  1回の実行で2件以上のイベントを供給したURLを自動的に学習し、3回連続で不発なら削除します（最大8件）
 
 ## コスト目安
 
