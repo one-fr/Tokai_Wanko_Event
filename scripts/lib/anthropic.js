@@ -2,7 +2,7 @@ import Anthropic from '@anthropic-ai/sdk';
 
 /**
  * 用途ごとにモデルを分ける。
- * - extract: 検索結果から「東海4県の犬メインイベントか」を判断する必要があり精度が要る
+ * - extract: 検索結果から「東海3県の犬メインイベントか」を判断する必要があり精度が要る
  * - estimate: 参考実績をもとに幅を出すだけの単純タスクなので安価なモデルで足りる
  */
 export const MODELS = {

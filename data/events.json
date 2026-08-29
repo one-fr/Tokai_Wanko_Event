@@ -69,52 +69,6 @@
     "last_checked": "2026-08-29"
   },
   {
-    "id": "ワンタイムマルシェ-ナイトドッグマルシェ--2026-09-22",
-    "series_id": null,
-    "name": "ワンタイムマルシェ～ナイトドッグマルシェ～",
-    "prefecture": "静岡県",
-    "venue": "蓬莱橋",
-    "address": "静岡県島田市南2",
-    "start_date": "2026-09-22",
-    "end_date": "2026-09-22",
-    "source_url": "https://pettena.jp/blogs/pet-outings/dog-events-tokai",
-    "venue_type": "その他・不明",
-    "admission": "無料",
-    "booth_count": null,
-    "attendance": {
-      "status": "predicted",
-      "min": 500,
-      "max": 2500,
-      "basis": "蓬莱橋は観光地ですが屋外・無料のマルシェ形式イベントで、来場者の属性や動員数が不透明なため、通りすがりも含めて幅広く想定。会場規模や出展ブース数が不明のため、保守的に500～2,500人と予測。",
-      "collected_at": "2026-08-29"
-    },
-    "calendar_event_id": "glmu0dqgcic10uu938hnn3rv5c",
-    "last_checked": "2026-08-29"
-  },
-  {
-    "id": "デカケルわんこびより-静岡清水--2026-09-26",
-    "series_id": null,
-    "name": "デカケルわんこびより（静岡清水）",
-    "prefecture": "静岡県",
-    "venue": "清水マリンパーク",
-    "address": "",
-    "start_date": "2026-09-26",
-    "end_date": "2026-09-27",
-    "source_url": "https://pettena.jp/blogs/pet-outings/dog-events-tokai",
-    "venue_type": "屋外の公園・河川敷",
-    "admission": "無料",
-    "booth_count": null,
-    "attendance": {
-      "status": "predicted",
-      "min": 2000,
-      "max": 5000,
-      "basis": "屋外公園・無料イベントは、屋内展示場の有料イベント（わんにゃんドーム2日間約1.8万人）とは異なり、天候の影響と通りすがり客により来場者が大きく制限されます。ブース数未明のため、屋外無料イベントの典型的な規模幅で保守的に推定。",
-      "collected_at": "2026-08-29"
-    },
-    "calendar_event_id": "0dd88q4bu3o43be4vl9dqj3iv0",
-    "last_checked": "2026-08-29"
-  },
-  {
     "id": "デカケルわんこびより-愛知長久手--2026-10-24",
     "series_id": null,
     "name": "デカケルわんこびより（愛知長久手）",
@@ -322,29 +276,6 @@
     "last_checked": "2026-08-29"
   },
   {
-    "id": "富士山麓ドッグマラソン2026-静岡カニクロス-2026-09-26",
-    "series_id": null,
-    "name": "富士山麓ドッグマラソン2026 静岡カニクロス",
-    "prefecture": "静岡県",
-    "venue": "バンディゴルフ場跡地",
-    "address": "静岡県裾野市",
-    "start_date": "2026-09-26",
-    "end_date": "2026-09-26",
-    "source_url": "https://odekake-wanko-bu.com/canicross-shizuoka/",
-    "venue_type": "その他・不明",
-    "admission": "無料",
-    "booth_count": null,
-    "attendance": {
-      "status": "predicted",
-      "min": 1500,
-      "max": 4500,
-      "basis": "屋外・無料開催のドッグスポーツイベントと推定。わんにゃんドームのような屋内有料展示会（1日当たり約8,000～9,400人）とは異なり、天候や話題性に左右されやすく、また参加者主体のカニクロス（犬と飼い主が一緒に走るスポーツ）であるため、観客数は限定的と考えられます。情報が限定的なため、保守的に幅を持たせています。",
-      "collected_at": "2026-08-29"
-    },
-    "calendar_event_id": "t646m6pk46ve5uv81ko3t81vi0",
-    "last_checked": "2026-08-29"
-  },
-  {
     "id": "わんてらすdogマルシェ-in-いなべ-2026-09-20",
     "series_id": null,
     "name": "わんてらすdogマルシェ in いなべ",
@@ -365,29 +296,6 @@
       "collected_at": "2026-08-29"
     },
     "calendar_event_id": "rh9pgfrhm75qo8vuqk9ngm34fg",
-    "last_checked": "2026-08-29"
-  },
-  {
-    "id": "わんてらすdogマルシェ-in-清水-2026-09-26",
-    "series_id": null,
-    "name": "わんてらすdogマルシェ in 清水",
-    "prefecture": "静岡県",
-    "venue": "清水マリンパーク",
-    "address": "静岡県静岡市清水区",
-    "start_date": "2026-09-26",
-    "end_date": "2026-09-27",
-    "source_url": "https://pettena.jp/blogs/pet-outings/dog-events-tokai",
-    "venue_type": "屋外の公園・河川敷",
-    "admission": "不明",
-    "booth_count": null,
-    "attendance": {
-      "status": "predicted",
-      "min": 3000,
-      "max": 8000,
-      "basis": "屋外の公園開催、無料と推定される。わんにゃんドーム（屋内有料展示場、2日間1.5～2万人）と異なり、天候に左右されやすく通りすがりの立ち寄りが含まれる屋外無料イベントとして、より控えめな規模を想定。",
-      "collected_at": "2026-08-29"
-    },
-    "calendar_event_id": "b65861pmmrv784tu9ijcaro20o",
     "last_checked": "2026-08-29"
   },
   {
@@ -434,75 +342,6 @@
       "collected_at": "2026-08-29"
     },
     "calendar_event_id": "t8me23no81nue1djbqupj527ro",
-    "last_checked": "2026-08-29"
-  },
-  {
-    "id": "ドッグマルシェ富士山-2026-09-05",
-    "series_id": null,
-    "name": "ドッグマルシェ富士山",
-    "prefecture": "静岡県",
-    "venue": "富士ミルクランド",
-    "address": "静岡県富士宮市上井出3690",
-    "start_date": "2026-09-05",
-    "end_date": "2026-09-06",
-    "source_url": "https://pets-support.com/dog-event/",
-    "venue_type": "商業施設",
-    "admission": "不明",
-    "booth_count": null,
-    "attendance": {
-      "status": "predicted",
-      "min": 2500,
-      "max": 6000,
-      "basis": "商業施設（富士ミルクランド）での開催で、ブース数・入場料が不明のため、商業施設内イベントの来場者傾向を考慮。屋内展示場の専有イベント（わんにゃんドーム級2日間1.5〜2万人）より規模が限定されると想定し、保守的に2.5〜6千人と推定。",
-      "collected_at": "2026-08-29"
-    },
-    "calendar_event_id": "f9v3c8uhk4nr2r56utdq1bahao",
-    "last_checked": "2026-08-29"
-  },
-  {
-    "id": "boo-bull-boo-festa-2026-autumn-2026-10-04",
-    "series_id": null,
-    "name": "BOO!! BULL BOO!! FESTA 2026 AUTUMN",
-    "prefecture": "静岡県",
-    "venue": "富士山樹空の森",
-    "address": "静岡県御殿場市",
-    "start_date": "2026-10-04",
-    "end_date": "2026-10-04",
-    "source_url": "https://magazine.cainz.com/wanqol/articles/japan_dogevent_2026",
-    "venue_type": "屋外の公園・河川敷",
-    "admission": "不明",
-    "booth_count": null,
-    "attendance": {
-      "status": "predicted",
-      "min": 2000,
-      "max": 5000,
-      "basis": "屋外の公園開催で1日間、ブース数や天候予測が未確認のため。屋外無料イベントは天候と立ち寄り属性により屋内有料展示会と比べて来場者が少なくなりやすく、数千人規模と判断。保守的に2,000～5,000人と推定。",
-      "collected_at": "2026-08-29"
-    },
-    "calendar_event_id": "u23b55gkjmjpgto2i9rpqnt6kc",
-    "last_checked": "2026-08-29"
-  },
-  {
-    "id": "第5回-dog-base-2026-08-29",
-    "series_id": null,
-    "name": "第5回 DOG BASE",
-    "prefecture": "静岡県",
-    "venue": "ふじさんめっせ",
-    "address": "静岡県富士市",
-    "start_date": "2026-08-29",
-    "end_date": "2026-08-30",
-    "source_url": "https://pettena.jp/blogs/pet-outings/dog-events-tokai",
-    "venue_type": "屋内展示場",
-    "admission": "有料",
-    "booth_count": 120,
-    "attendance": {
-      "status": "predicted",
-      "min": 10000,
-      "max": 18000,
-      "basis": "屋内展示場・有料イベントで、わんにゃんドーム（2日間1.5〜2万人規模）と同じ会場形態。ブース数120で規模は比較可能だが、わんにゃんドームの実績を流用せず、東海地域の屋内有料展示場イベントとして保守的に1〜1.8万人と推定。",
-      "collected_at": "2026-08-29"
-    },
-    "calendar_event_id": "mhg2rl7gl7avjrjpccua2rifr4",
     "last_checked": "2026-08-29"
   },
   {
@@ -575,52 +414,6 @@
     "last_checked": "2026-08-29"
   },
   {
-    "id": "足柄わんわんフェスタ-2026-09-19",
-    "series_id": null,
-    "name": "足柄わんわんフェスタ",
-    "prefecture": "静岡県",
-    "venue": "EXPASA足柄(下り)屋外イベントスペース",
-    "address": "静岡県駿東郡小山町桑木",
-    "start_date": "2026-09-19",
-    "end_date": "2026-09-19",
-    "source_url": "https://pets-support.com/dog-event/",
-    "venue_type": "商業施設",
-    "admission": "不明",
-    "booth_count": null,
-    "attendance": {
-      "status": "predicted",
-      "min": 1500,
-      "max": 4000,
-      "basis": "商業施設(EXPASA足柄)の屋外イベントスペースでの1日開催。商業施設内イベントは施設の通常来客流入に依存し、屋外・無料の可能性が高いため、屋内有料展示会よりも来場者は少なくなりやすいと判断。ブース数や入場料が不明で情報が限定的なため、幅を広げて推定。",
-      "collected_at": "2026-08-29"
-    },
-    "calendar_event_id": "tih8pl39cu40ch2dkqhtk9ev3o",
-    "last_checked": "2026-08-29"
-  },
-  {
-    "id": "浜名湖八犬伝開幕祭-2026-10-03",
-    "series_id": null,
-    "name": "浜名湖八犬伝開幕祭",
-    "prefecture": "静岡県",
-    "venue": "舘山寺門前通り",
-    "address": "静岡県浜松市中央区舘山寺町",
-    "start_date": "2026-10-03",
-    "end_date": "2026-10-04",
-    "source_url": "https://www.kankokeizai.com/2608061600kks/",
-    "venue_type": "その他・不明",
-    "admission": "不明",
-    "booth_count": null,
-    "attendance": {
-      "status": "predicted",
-      "min": 2000,
-      "max": 6000,
-      "basis": "舘山寺門前通りは観光地の路面で、屋外・通路利用型と推定。天候や通りすがりの立ち寄りに左右されやすく、わんにゃんドーム（屋内有料、2日間1.5〜2万人）とは異なり数千人規模と見込む。ブース数や入場形態が不明なため、幅を広めに設定。",
-      "collected_at": "2026-08-29"
-    },
-    "calendar_event_id": "q1apk2u9r8cffs76c73edj8jv0",
-    "last_checked": "2026-08-29"
-  },
-  {
     "id": "paw-wow-market-block47-2026-09-20",
     "series_id": null,
     "name": "PAW WOW MARKET BLOCK47",
@@ -644,29 +437,6 @@
     "last_checked": "2026-08-29"
   },
   {
-    "id": "ドッグマルシェ-in-neopasa静岡-上り--2026-10-18",
-    "series_id": null,
-    "name": "ドッグマルシェ in NEOPASA静岡(上り)",
-    "prefecture": "静岡県",
-    "venue": "NEOPASA静岡(上り)屋外イベントスペース",
-    "address": "静岡県静岡市葵区小瀬戸",
-    "start_date": "2026-10-18",
-    "end_date": "2026-10-18",
-    "source_url": "https://pets-support.com/dog-event/",
-    "venue_type": "商業施設",
-    "admission": "不明",
-    "booth_count": null,
-    "attendance": {
-      "status": "predicted",
-      "min": 800,
-      "max": 2500,
-      "basis": "商業施設（NEOPASA）の屋外イベントスペース、1日間開催。商業施設の通常来客が流入する環境であり、屋外のため天候に左右される。ブース数・入場料が不明なため、同規模の商業施設ペットイベントは数千人程度が目安だが、屋外・1日間という要因から保守的に幅広く予測。",
-      "collected_at": "2026-08-29"
-    },
-    "calendar_event_id": "mfm96ntubajl5f234tanpbqcag",
-    "last_checked": "2026-08-29"
-  },
-  {
     "id": "清洲城ドッグマルシェ-paw-wow-market-2026-10-31",
     "series_id": null,
     "name": "清洲城ドッグマルシェ PAW WOW MARKET",
@@ -687,29 +457,6 @@
       "collected_at": "2026-08-29"
     },
     "calendar_event_id": "afis55t45r6kivl7oku929ajqg",
-    "last_checked": "2026-08-29"
-  },
-  {
-    "id": "ワンタイムマルシェ-秋のドッグフェス--2026-10-17",
-    "series_id": null,
-    "name": "ワンタイムマルシェ〜秋のドッグフェス〜",
-    "prefecture": "静岡県",
-    "venue": "蓬萊橋",
-    "address": "静岡県島田市南2",
-    "start_date": "2026-10-17",
-    "end_date": "2026-10-17",
-    "source_url": "https://pets-support.com/dog-event/",
-    "venue_type": "その他・不明",
-    "admission": "無料",
-    "booth_count": null,
-    "attendance": {
-      "status": "predicted",
-      "min": 800,
-      "max": 2500,
-      "basis": "蓬萊橋周辺（屋外・河川敷エリア）の無料イベントとして判断。屋内展示場の有料イベント（わんにゃんドーム）と異なり、天候や通りすがりの立ち寄りに大きく左右されやすく、また1日開催であることを考慮し、保守的に見積もりました。",
-      "collected_at": "2026-08-29"
-    },
-    "calendar_event_id": "paj70bqgbo3ge07ogksa7isla4",
     "last_checked": "2026-08-29"
   },
   {
