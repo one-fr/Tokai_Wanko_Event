@@ -23,12 +23,12 @@
     "last_checked": "2026-08-14"
   },
   {
-    "id": "第55回わんマル夜市-in-アンフォーレ-2026-09-05",
+    "id": "第55回わんマル夜市inアンフォーレ-2026-09-05",
     "series_id": null,
-    "name": "第55回わんマル夜市 in アンフォーレ",
-    "prefecture": "",
-    "venue": "愛知県安城市御幸本町12番1号",
-    "address": "愛知県安城市御幸本町12番1号",
+    "name": "第55回わんマル夜市inアンフォーレ",
+    "prefecture": "愛知県",
+    "venue": "アンフォーレ願いごと広場",
+    "address": "愛知県安城市",
     "start_date": "2026-09-05",
     "end_date": "2026-09-05",
     "source_url": "https://wannyan-smile.com/column-list/c1/",
@@ -39,11 +39,11 @@
       "status": "predicted",
       "min": 2000,
       "max": 6000,
-      "basis": "商業施設内の屋外広場での1日間開催と推定。わんマル夜市シリーズの実績データは保有していないため、会場規模・来客構成が不明な中での保守的な予測。屋外イベントは天候や時間帯による変動が大きく、商業施設併設でも通常来客の流入程度では屋内有料展示会（わんにゃんドーム1日5,000～10,000人規模）より少なくなりやすい傾向を考慮。",
-      "collected_at": "2026-08-13"
+      "basis": "「わんマル夜市」は商業施設内イベントと推定。屋外商業スペースでの1日間夜間開催のため、屋内有料展示場と異なり来場者は限定的。天候や立地、運営規模が不透明なため広い幅で予測。",
+      "collected_at": "2026-08-29"
     },
     "calendar_event_id": "t8kav90c0i7o2d5md2oja3he1o",
-    "last_checked": "2026-08-14"
+    "last_checked": "2026-08-29"
   },
   {
     "id": "にぎわいの森-デカケルわんこびより-2026-09-20",
@@ -181,14 +181,14 @@
       "collected_at": "2026-08-14"
     },
     "calendar_event_id": "umsif320gclo8u7u4nebh08n88",
-    "last_checked": "2026-08-28"
+    "last_checked": "2026-08-29"
   },
   {
     "id": "犬市場-candy-palette-in-三井アウトレットパーク岡崎-2026-12-12",
     "series_id": "inuichiba",
     "name": "犬市場 Candy palette in 三井アウトレットパーク岡崎",
     "prefecture": "愛知県",
-    "venue": "三井アウトレットパーク 岡崎",
+    "venue": "三井アウトレットパーク岡崎",
     "address": "",
     "start_date": "2026-12-12",
     "end_date": "2026-12-13",
@@ -199,35 +199,35 @@
     "attendance": {
       "status": "predicted",
       "min": 4000,
-      "max": 9000,
-      "basis": "商業施設内での開催で、専有スペースは屋内展示場より狭く、施設の通常来客との流入混在が想定されるため。屋内有料展示場の標準規模（わんにゃんドーム2日間1.5〜2万人）より大幅に下方修正。入場料不明・ブース数不明のため、幅を広げて保守的に見積もった。",
-      "collected_at": "2026-08-14"
+      "max": 8000,
+      "basis": "商業施設内の2日間イベントで、わんにゃんドーム（屋内展示場・有料2日間1.5〜2万人）と異なり、施設通常来客の流入と専有スペースの制約を考慮して保守的に推定。",
+      "collected_at": "2026-08-29"
     },
     "calendar_event_id": "n93rpa44tdgag1uvbgboaghovc",
-    "last_checked": "2026-08-28"
+    "last_checked": "2026-08-29"
   },
   {
     "id": "犬祭りテラス-2026-12-13",
     "series_id": null,
     "name": "犬祭りテラス",
-    "prefecture": "",
-    "venue": "岐阜県土岐市土岐ヶ丘4-5-3",
+    "prefecture": "岐阜県",
+    "venue": "テラスゲート土岐",
     "address": "岐阜県土岐市土岐ヶ丘4-5-3",
     "start_date": "2026-12-13",
     "end_date": "2026-12-13",
-    "source_url": "https://inumatsuri.com/",
-    "venue_type": "その他・不明",
-    "admission": "不明",
+    "source_url": "https://inumatsuri.com/eventinfo/",
+    "venue_type": "商業施設",
+    "admission": "無料",
     "booth_count": null,
     "attendance": {
       "status": "predicted",
-      "min": 2000,
-      "max": 5000,
-      "basis": "商業施設内の1日間のイベントで、ブース数や入場形態が不明。商業施設は通常来客が流入する一方、専有スペースは展示場より狭く、イベント目的の来場者はより限定されやすいため、屋内有料展示会の実績（1日あたり約4,000〜9,000人）より下限を低めに設定。情報が限定的なため幅を広めに設定。",
-      "collected_at": "2026-08-13"
+      "min": 1000,
+      "max": 3000,
+      "basis": "商業施設内・無料イベント（1日間）。施設の通常来客が流入するため、専有スペースが展示場より狭く、イベント目的の来場者はわんにゃんドーム（屋内有料・2日間1.5〜2万人）より大幅に少なくなると想定。ブース数不明のため、やや幅広く予測。",
+      "collected_at": "2026-08-29"
     },
     "calendar_event_id": "f6cf8jkvcq367avfmontpc6kqo",
-    "last_checked": "2026-08-14"
+    "last_checked": "2026-08-29"
   },
   {
     "id": "わんにゃんドーム2027-2027-02-13",
@@ -250,7 +250,7 @@
       "collected_at": "2026-08-14"
     },
     "calendar_event_id": "vb6tb3bq3o03q475dqcjmqp4ls",
-    "last_checked": "2026-08-28"
+    "last_checked": "2026-08-29"
   },
   {
     "id": "犬祭り-テラスゲート土岐--2026-08-29",
@@ -273,7 +273,7 @@
       "collected_at": "2026-08-14"
     },
     "calendar_event_id": "urn8r8hp4qmdv8qp1a4upnoc1o",
-    "last_checked": "2026-08-14"
+    "last_checked": "2026-08-29"
   },
   {
     "id": "犬祭り-テラスゲート土岐--2026-09-12",
@@ -296,7 +296,7 @@
       "collected_at": "2026-08-14"
     },
     "calendar_event_id": "ok8b03n06motvp6s8pa9lsged0",
-    "last_checked": "2026-08-14"
+    "last_checked": "2026-08-29"
   },
   {
     "id": "わんだらけ-2026-10-03",
@@ -315,5 +315,166 @@
     "calendar_event_id": "4tu6mu1f6l2t78jo1uqe35onvd",
     "last_checked": "2026-08-29",
     "manual_origin": true
+  },
+  {
+    "id": "富士山麓ドッグマラソン2026-静岡カニクロス-2026-09-26",
+    "series_id": null,
+    "name": "富士山麓ドッグマラソン2026 静岡カニクロス",
+    "prefecture": "静岡県",
+    "venue": "バンディゴルフ場跡地",
+    "address": "静岡県裾野市",
+    "start_date": "2026-09-26",
+    "end_date": "2026-09-26",
+    "source_url": "https://odekake-wanko-bu.com/canicross-shizuoka/",
+    "venue_type": "その他・不明",
+    "admission": "無料",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 1500,
+      "max": 4500,
+      "basis": "屋外・無料開催のドッグスポーツイベントと推定。わんにゃんドームのような屋内有料展示会（1日当たり約8,000～9,400人）とは異なり、天候や話題性に左右されやすく、また参加者主体のカニクロス（犬と飼い主が一緒に走るスポーツ）であるため、観客数は限定的と考えられます。情報が限定的なため、保守的に幅を持たせています。",
+      "collected_at": "2026-08-29"
+    },
+    "calendar_event_id": "t646m6pk46ve5uv81ko3t81vi0",
+    "last_checked": "2026-08-29"
+  },
+  {
+    "id": "わんてらすdogマルシェ-in-いなべ-2026-09-20",
+    "series_id": null,
+    "name": "わんてらすdogマルシェ in いなべ",
+    "prefecture": "三重県",
+    "venue": "にぎわいの森",
+    "address": "三重県いなべ市",
+    "start_date": "2026-09-20",
+    "end_date": "2026-09-20",
+    "source_url": "https://pettena.jp/blogs/pet-outings/dog-events-tokai",
+    "venue_type": "商業施設",
+    "admission": "不明",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 1500,
+      "max": 4500,
+      "basis": "商業施設（にぎわいの森）内での1日間イベントと判断。屋内展示場の有料イベント（わんにゃんドーム級）と異なり、商業施設の通常来客が流入する一方、専有スペースは展示場より限定的と推定されるため、わんにゃんドームの1日分（8,000～9,500人）より少ない規模を想定。出展ブース数や入場料の情報がないため、保守的に幅を広げました。",
+      "collected_at": "2026-08-29"
+    },
+    "calendar_event_id": "rh9pgfrhm75qo8vuqk9ngm34fg",
+    "last_checked": "2026-08-29"
+  },
+  {
+    "id": "わんてらすdogマルシェ-in-清水-2026-09-26",
+    "series_id": null,
+    "name": "わんてらすdogマルシェ in 清水",
+    "prefecture": "静岡県",
+    "venue": "清水マリンパーク",
+    "address": "静岡県静岡市清水区",
+    "start_date": "2026-09-26",
+    "end_date": "2026-09-27",
+    "source_url": "https://pettena.jp/blogs/pet-outings/dog-events-tokai",
+    "venue_type": "屋外の公園・河川敷",
+    "admission": "不明",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 3000,
+      "max": 8000,
+      "basis": "屋外の公園開催、無料と推定される。わんにゃんドーム（屋内有料展示場、2日間1.5～2万人）と異なり、天候に左右されやすく通りすがりの立ち寄りが含まれる屋外無料イベントとして、より控えめな規模を想定。",
+      "collected_at": "2026-08-29"
+    },
+    "calendar_event_id": "b65861pmmrv784tu9ijcaro20o",
+    "last_checked": "2026-08-29"
+  },
+  {
+    "id": "わんてらすdogマルシェ-in-長久手-2026-10-24",
+    "series_id": null,
+    "name": "わんてらすdogマルシェ in 長久手",
+    "prefecture": "愛知県",
+    "venue": "モリコロパーク",
+    "address": "愛知県長久手市",
+    "start_date": "2026-10-24",
+    "end_date": "2026-10-25",
+    "source_url": "https://pettena.jp/blogs/pet-outings/dog-events-tokai",
+    "venue_type": "屋外の公園・河川敷",
+    "admission": "不明",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 3000,
+      "max": 8000,
+      "basis": "屋外の公園開催で天候や通りすがりの来場者に大きく左右される。わんにゃんドーム（屋内展示場・有料・2日間計1.5～2万人）とは異なり、屋外無料イベントは規模が縮小しやすい傾向のため、保守的に3,000～8,000人と予測。",
+      "collected_at": "2026-08-29"
+    },
+    "calendar_event_id": "kchtv5qis6fmuh75m0ckt7llj8",
+    "last_checked": "2026-08-29"
+  },
+  {
+    "id": "フラリエくらしフェスタ-with-dog-night-2026-09-10",
+    "series_id": null,
+    "name": "フラリエくらしフェスタ with DOG Night",
+    "prefecture": "愛知県",
+    "venue": "久屋大通庭園フラリエ",
+    "address": "愛知県名古屋市中区大須4-4-1",
+    "start_date": "2026-09-10",
+    "end_date": "2026-09-10",
+    "source_url": "https://pets-support.com/dog-event/",
+    "venue_type": "商業施設",
+    "admission": "不明",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 1500,
+      "max": 3500,
+      "basis": "商業施設内の1日開催イベントとして判断。屋内展示場の有料イベント（わんにゃんドーム約2万人/2日間）と異なり、施設の通常来客との混在が生じ、かつ1日間開催のため、保守的に下方修正して推定。ブース数や入場料が不明のため幅を広げた。",
+      "collected_at": "2026-08-29"
+    },
+    "calendar_event_id": "t8me23no81nue1djbqupj527ro",
+    "last_checked": "2026-08-29"
+  },
+  {
+    "id": "ドッグマルシェ富士山-2026-09-05",
+    "series_id": null,
+    "name": "ドッグマルシェ富士山",
+    "prefecture": "静岡県",
+    "venue": "富士ミルクランド",
+    "address": "静岡県富士宮市上井出3690",
+    "start_date": "2026-09-05",
+    "end_date": "2026-09-06",
+    "source_url": "https://pets-support.com/dog-event/",
+    "venue_type": "商業施設",
+    "admission": "不明",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 2500,
+      "max": 6000,
+      "basis": "商業施設（富士ミルクランド）での開催で、ブース数・入場料が不明のため、商業施設内イベントの来場者傾向を考慮。屋内展示場の専有イベント（わんにゃんドーム級2日間1.5〜2万人）より規模が限定されると想定し、保守的に2.5〜6千人と推定。",
+      "collected_at": "2026-08-29"
+    },
+    "calendar_event_id": "f9v3c8uhk4nr2r56utdq1bahao",
+    "last_checked": "2026-08-29"
+  },
+  {
+    "id": "boo-bull-boo-festa-2026-autumn-2026-10-04",
+    "series_id": null,
+    "name": "BOO!! BULL BOO!! FESTA 2026 AUTUMN",
+    "prefecture": "静岡県",
+    "venue": "富士山樹空の森",
+    "address": "静岡県御殿場市",
+    "start_date": "2026-10-04",
+    "end_date": "2026-10-04",
+    "source_url": "https://magazine.cainz.com/wanqol/articles/japan_dogevent_2026",
+    "venue_type": "屋外の公園・河川敷",
+    "admission": "不明",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 2000,
+      "max": 5000,
+      "basis": "屋外の公園開催で1日間、ブース数や天候予測が未確認のため。屋外無料イベントは天候と立ち寄り属性により屋内有料展示会と比べて来場者が少なくなりやすく、数千人規模と判断。保守的に2,000～5,000人と推定。",
+      "collected_at": "2026-08-29"
+    },
+    "calendar_event_id": "u23b55gkjmjpgto2i9rpqnt6kc",
+    "last_checked": "2026-08-29"
   }
 ]
