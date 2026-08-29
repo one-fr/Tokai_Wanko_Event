@@ -4,7 +4,8 @@
 
 来場者数は公式発表があればそのまま記載し、未発表の場合はClaude APIによる予測値を「予測」と明記した上でカレンダーの備考欄に記載します。
 
-詳細な設計・意思決定の経緯は [`docs/plan.md`](./docs/plan.md)（計画書）を参照してください。
+- **現行仕様の詳細**: [`docs/specification.md`](./docs/specification.md)（実装から起こした仕様書）
+- **設計・意思決定の経緯**: [`docs/plan.md`](./docs/plan.md)（計画書）
 
 ## 主な機能
 
@@ -54,6 +55,7 @@ flowchart LR
   known_sources.json       # 巡回対象の公式サイトURL一覧（手で管理）
   discovered_sources.json  # 実行結果から自動学習したイベントまとめサイト（自動管理）
 /docs/
+  specification.md         # 仕様書（実装から起こした現行仕様）
   plan.md                  # 計画書（設計・意思決定の経緯）
 /.env.example              # ローカル実行用の環境変数テンプレート
 /README.md
