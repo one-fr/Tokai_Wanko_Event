@@ -711,5 +711,28 @@
     },
     "calendar_event_id": "paj70bqgbo3ge07ogksa7isla4",
     "last_checked": "2026-08-29"
+  },
+  {
+    "id": "木曽三川わんこマルシェvol-28-2026-10-03",
+    "series_id": null,
+    "name": "木曽三川わんこマルシェ vol.28",
+    "prefecture": "岐阜県",
+    "venue": "国営木曽三川公園 芝生広場北ゾーン",
+    "address": "岐阜県海津市海津町油島255-3",
+    "start_date": "2026-10-03",
+    "end_date": "2026-10-04",
+    "source_url": "https://kuro-shiba.net/dogevent-kisowanko/",
+    "venue_type": "屋外の公園・河川敷",
+    "admission": "不明",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 3000,
+      "max": 7000,
+      "basis": "屋外の公園での無料または低料金イベントと推定。屋内有料展示会のわんにゃんドーム（2日間1.5〜2万人）とは異なり、天候や通りすがりの立ち寄りに左右されやすく、規模は大きく下回ると判断。ブース数が不明なため、保守的に3,000〜7,000人の幅を設定。",
+      "collected_at": "2026-08-29"
+    },
+    "calendar_event_id": "t96aid8ap992mvnsvvmc4i78hk",
+    "last_checked": "2026-08-29"
   }
 ]

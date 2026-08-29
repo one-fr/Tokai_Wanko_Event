@@ -6,14 +6,23 @@ const KNOWN_PATH = new URL('../../data/known_sources.json', import.meta.url);
 const DISCOVERED_PATH = new URL('../../data/discovered_sources.json', import.meta.url);
 
 // 自動学習した情報源の保持上限。入力トークンが膨らみすぎないよう制限する
-const MAX_DISCOVERED = 8;
+const MAX_DISCOVERED = 12;
 
-// 1回の実行でこの件数以上のイベントを供給したURLを「一覧ページ」とみなして学習する。
-// 1件しか出ないURLは個別イベントのページである可能性が高く、次回以降は陳腐化するため学習しない
-const MIN_EVENTS_TO_LEARN = 2;
+// 同一ホストから保持するURLの上限。月別記事など複数URLを持つサイトに枠を占有させない
+const MAX_PER_HOST = 2;
+
+// イベントを供給したURLは1件からすぐ学習する。
+// 「一覧ページか単発記事か」をページ内容から見分ける試みは失敗した
+// （実測: 良質な inumatsuri.com は期間内の日付6件、単発記事の odekake-wanko-bu.com は18件で逆転）。
+// 判定は時間に任せる方が確実で、続けてヒットするかどうかで選別する。
+const MIN_EVENTS_TO_LEARN = 1;
 
 // 連続でこの回数ヒットしなかった情報源は削除する（更新停止・構成変更への追随）
 const MAX_MISSES = 3;
+
+// 供給実績が1件だけのまま不発になった情報源は、単発記事とみなして早めに削除する。
+// 掲載イベントが終われば二度とヒットしないため、枠を占有させない
+const QUICK_PRUNE_MISSES = 1;
 
 /**
  * 巡回対象の情報源を読み込む。
@@ -85,7 +94,6 @@ export async function updateDiscoveredSources(events) {
       existing.misses = 0;
       continue;
     }
-    // 一覧ページと判断できる件数を供給したURLだけ学習する
     if (count < MIN_EVENTS_TO_LEARN) continue;
 
     const record = {
@@ -97,25 +105,42 @@ export async function updateDiscoveredSources(events) {
     added.push(record);
   }
 
-  // ヒットしなかった情報源のmissesを増やし、続いたものは削除する
+  // ヒットしなかった情報源のmissesを増やす
   const removed = [];
   for (const s of list) {
     if (hits.has(s.url)) continue;
     s.misses = (s.misses ?? 0) + 1;
   }
+
   let kept = list.filter((s) => {
-    if ((s.misses ?? 0) >= MAX_MISSES) { removed.push(s); return false; }
+    const misses = s.misses ?? 0;
+    if (misses >= MAX_MISSES) { removed.push(s); return false; }
+    // 1件供給しただけで不発になったものは単発記事と判断して早期に落とす
+    if (s.events_seen <= 1 && misses >= QUICK_PRUNE_MISSES) { removed.push(s); return false; }
     return true;
   });
 
-  // 供給実績の多い順に上限まで残す
+  // 供給実績の多い順に並べ、同一ホストの占有と総数を制限する
   kept.sort((a, b) => b.events_seen - a.events_seen);
-  const overflow = kept.slice(MAX_DISCOVERED);
-  kept = kept.slice(0, MAX_DISCOVERED);
+  const perHost = new Map();
+  const survivors = [];
+  for (const s of kept) {
+    const n = perHost.get(s.hostname) ?? 0;
+    if (n >= MAX_PER_HOST || survivors.length >= MAX_DISCOVERED) { removed.push(s); continue; }
+    perHost.set(s.hostname, n + 1);
+    survivors.push(s);
+  }
+  kept = survivors;
 
   await writeFile(DISCOVERED_PATH, JSON.stringify(kept, null, 2) + '\n', 'utf-8');
 
-  return { added, removed: [...removed, ...overflow], total: kept.length };
+  // 学習直後に枠から溢れたものは added から除く
+  const keptUrls = new Set(kept.map((s) => s.url));
+  return {
+    added: added.filter((s) => keptUrls.has(s.url)),
+    removed,
+    total: kept.length,
+  };
 }
 
 function hostOf(url) {
