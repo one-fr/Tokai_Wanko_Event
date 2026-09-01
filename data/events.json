@@ -23,11 +23,11 @@
     "last_checked": "2026-08-14"
   },
   {
-    "id": "第55回わんマル夜市inアンフォーレ-2026-09-05",
+    "id": "第55回-わんマル夜市-in-アンフォーレ-2026-09-05",
     "series_id": null,
-    "name": "第55回わんマル夜市inアンフォーレ",
+    "name": "第55回 わんマル夜市 in アンフォーレ",
     "prefecture": "愛知県",
-    "venue": "アンフォーレ願いごと広場",
+    "venue": "アンフォーレ 願いごと広場",
     "address": "愛知県安城市",
     "start_date": "2026-09-05",
     "end_date": "2026-09-05",
@@ -37,13 +37,13 @@
     "booth_count": null,
     "attendance": {
       "status": "predicted",
-      "min": 2000,
-      "max": 6000,
-      "basis": "「わんマル夜市」は商業施設内イベントと推定。屋外商業スペースでの1日間夜間開催のため、屋内有料展示場と異なり来場者は限定的。天候や立地、運営規模が不透明なため広い幅で予測。",
-      "collected_at": "2026-08-29"
+      "min": 1500,
+      "max": 4000,
+      "basis": "アンフォーレ（名古屋市営地下鉄駅直結の商業施設）の屋外オープンスペース「願いごと広場」での1日間の夜市イベント。商業施設内の屋外スペースのため、施設通常来客の流入は期待できず、イベント目的の来場者がメインになると想定。屋外無料イベントのため天候影響を受けやすく、1日限定であることを考慮し保守的に見積もりました。",
+      "collected_at": "2026-09-01"
     },
     "calendar_event_id": "t8kav90c0i7o2d5md2oja3he1o",
-    "last_checked": "2026-08-29"
+    "last_checked": "2026-09-01"
   },
   {
     "id": "デカケルわんこびより-三重いなべ--2026-09-20",
@@ -66,7 +66,7 @@
       "collected_at": "2026-08-29"
     },
     "calendar_event_id": "7ieloj3lpdor0ovvobu7q96qm8",
-    "last_checked": "2026-08-29"
+    "last_checked": "2026-09-01"
   },
   {
     "id": "デカケルわんこびより-愛知長久手--2026-10-24",
@@ -89,30 +89,30 @@
       "collected_at": "2026-08-29"
     },
     "calendar_event_id": "bdge520vkn165g6619uh88u518",
-    "last_checked": "2026-08-29"
+    "last_checked": "2026-09-01"
   },
   {
-    "id": "海津アクア-木曽三川わんこマルシェ2026秋-2026-10-24",
+    "id": "海津アクアわんこマルシェ-2026-10-24",
     "series_id": null,
-    "name": "海津アクア×木曽三川わんこマルシェ2026秋",
+    "name": "海津アクアわんこマルシェ",
     "prefecture": "岐阜県",
-    "venue": "国営木曽三川公園アクアワールド水郷パークセンター",
+    "venue": "木曽三川公園水郷アクアパーク 芝生広場",
     "address": "岐阜県海津市",
     "start_date": "2026-10-24",
     "end_date": "2026-10-25",
-    "source_url": "https://wannyan-smile.com/column-list/c1/",
+    "source_url": "https://pettena.jp/blogs/pet-outings/dog-events-tokai",
     "venue_type": "屋外の公園・河川敷",
     "admission": "無料",
     "booth_count": null,
     "attendance": {
       "status": "predicted",
-      "min": 3000,
-      "max": 7000,
-      "basis": "屋外公園の無料イベントであり、天候変動や通りすがり来場の影響を受けやすいため、屋内有料展示会のわんにゃんドーム（2日間1.5〜2万人）と比べて規模が縮小すると判断。ブース数未詳のため幅を広げました。",
-      "collected_at": "2026-08-29"
+      "min": 2000,
+      "max": 5000,
+      "basis": "屋外公園の無料イベントとして判断。わんにゃんドーム（屋内展示場・有料2日間計1.8万人前後）と異なり、天候や通りすがり客の影響を受けやすく、規模感は小さくなる傾向。具体的な来場者実績が確認できないため、慎重に推定。",
+      "collected_at": "2026-09-01"
     },
     "calendar_event_id": "gnhig7064da7cifiosdh9lbe0s",
-    "last_checked": "2026-08-29"
+    "last_checked": "2026-09-01"
   },
   {
     "id": "犬市場-in-okazaki-2026-autumn-2026-11-28",
@@ -135,7 +135,7 @@
       "collected_at": "2026-08-14"
     },
     "calendar_event_id": "umsif320gclo8u7u4nebh08n88",
-    "last_checked": "2026-08-29"
+    "last_checked": "2026-09-01"
   },
   {
     "id": "犬市場-candy-palette-in-三井アウトレットパーク-岡崎-2026-12-12",
@@ -158,7 +158,7 @@
       "collected_at": "2026-08-29"
     },
     "calendar_event_id": "n93rpa44tdgag1uvbgboaghovc",
-    "last_checked": "2026-08-29"
+    "last_checked": "2026-09-01"
   },
   {
     "id": "犬祭りテラス-2026-12-13",
@@ -181,7 +181,7 @@
       "collected_at": "2026-08-29"
     },
     "calendar_event_id": "f6cf8jkvcq367avfmontpc6kqo",
-    "last_checked": "2026-08-29"
+    "last_checked": "2026-09-01"
   },
   {
     "id": "わんにゃんドーム2027-2027-02-13",
@@ -204,7 +204,7 @@
       "collected_at": "2026-08-14"
     },
     "calendar_event_id": "vb6tb3bq3o03q475dqcjmqp4ls",
-    "last_checked": "2026-08-29"
+    "last_checked": "2026-09-01"
   },
   {
     "id": "犬祭り-テラスゲート土岐--2026-08-29",
@@ -250,7 +250,7 @@
       "collected_at": "2026-08-29"
     },
     "calendar_event_id": "ok8b03n06motvp6s8pa9lsged0",
-    "last_checked": "2026-08-29"
+    "last_checked": "2026-09-01"
   },
   {
     "id": "wandarake-marche-第51-52-2026-10-03",
@@ -273,7 +273,7 @@
       "collected_at": "2026-08-29"
     },
     "calendar_event_id": "4tu6mu1f6l2t78jo1uqe35onvd",
-    "last_checked": "2026-08-29"
+    "last_checked": "2026-09-01"
   },
   {
     "id": "わんてらすdogマルシェ-in-いなべ-2026-09-20",
@@ -342,7 +342,7 @@
       "collected_at": "2026-08-29"
     },
     "calendar_event_id": "t8me23no81nue1djbqupj527ro",
-    "last_checked": "2026-08-29"
+    "last_checked": "2026-09-01"
   },
   {
     "id": "ワン-だら-りん--2026-09-26",
@@ -365,7 +365,7 @@
       "collected_at": "2026-08-29"
     },
     "calendar_event_id": "ge4p0eo0rc6aclg78cd6it7940",
-    "last_checked": "2026-08-29"
+    "last_checked": "2026-09-01"
   },
   {
     "id": "カインズマーケット-with-わんぱら-2026-11-15",
@@ -388,7 +388,7 @@
       "collected_at": "2026-08-29"
     },
     "calendar_event_id": "l6piio4kqmglabnm9ljbcpoim0",
-    "last_checked": "2026-08-29"
+    "last_checked": "2026-09-01"
   },
   {
     "id": "よる犬祭り-meieki-parklet-2026-09-04",
@@ -411,7 +411,7 @@
       "collected_at": "2026-08-29"
     },
     "calendar_event_id": "m5n6gqtri9n1ng2mfuo7ct9nac",
-    "last_checked": "2026-08-29"
+    "last_checked": "2026-09-01"
   },
   {
     "id": "paw-wow-market-block47-2026-09-20",
@@ -434,7 +434,7 @@
       "collected_at": "2026-08-29"
     },
     "calendar_event_id": "po99mtbbcr1v5tn5uq0p5h1hjk",
-    "last_checked": "2026-08-29"
+    "last_checked": "2026-09-01"
   },
   {
     "id": "清洲城ドッグマルシェ-paw-wow-market-2026-10-31",
@@ -457,7 +457,7 @@
       "collected_at": "2026-08-29"
     },
     "calendar_event_id": "afis55t45r6kivl7oku929ajqg",
-    "last_checked": "2026-08-29"
+    "last_checked": "2026-09-01"
   },
   {
     "id": "木曽三川わんこマルシェvol-28-2026-10-03",
@@ -480,6 +480,29 @@
       "collected_at": "2026-08-29"
     },
     "calendar_event_id": "t96aid8ap992mvnsvvmc4i78hk",
-    "last_checked": "2026-08-29"
+    "last_checked": "2026-09-01"
+  },
+  {
+    "id": "あかつかわんこ6-2026-11-14",
+    "series_id": null,
+    "name": "あかつかわんこ6",
+    "prefecture": "愛知県",
+    "venue": "赤塚山公園 あかつかテラス",
+    "address": "愛知県豊川市市田町東堤上1-30",
+    "start_date": "2026-11-14",
+    "end_date": "2026-11-14",
+    "source_url": "https://pets-support.com/dog-event/",
+    "venue_type": "屋外の公園・河川敷",
+    "admission": "不明",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 800,
+      "max": 2500,
+      "basis": "屋外公園の1日開催で、入場料・ブース数の詳細は不明。屋外無料イベントは天候や通りすがりの立ち寄りに左右されやすく、屋内有料展示会と比べ来場者数は大きく減少する傾向。保守的に見積もり。",
+      "collected_at": "2026-09-01"
+    },
+    "calendar_event_id": "cf7a52tj4quenorujcgh9q9tbs",
+    "last_checked": "2026-09-01"
   }
 ]
