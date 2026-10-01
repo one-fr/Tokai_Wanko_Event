@@ -69,38 +69,15 @@
     "last_checked": "2026-09-01"
   },
   {
-    "id": "デカケルわんこびより-愛知長久手--2026-10-24",
+    "id": "デカケルわんこびより-モリコロパーク--2026-10-24",
     "series_id": null,
-    "name": "デカケルわんこびより（愛知長久手）",
+    "name": "デカケルわんこびより（モリコロパーク）",
     "prefecture": "愛知県",
-    "venue": "モリコロパーク",
-    "address": "",
+    "venue": "愛・地球博記念公園（モリコロパーク）",
+    "address": "愛知県長久手市茨ケ廻間乙1533-1",
     "start_date": "2026-10-24",
-    "end_date": "2026-10-25",
-    "source_url": "https://pettena.jp/blogs/pet-outings/dog-events-tokai",
-    "venue_type": "屋外の公園・河川敷",
-    "admission": "無料",
-    "booth_count": null,
-    "attendance": {
-      "status": "predicted",
-      "min": 3000,
-      "max": 7000,
-      "basis": "屋外公園の無料イベント（モリコロパーク）で2日間開催。屋内有料展示会（わんにゃんドーム級：2日間1.5〜2万人）と異なり、天候や立ち寄り層の変動が大きく、また無料であることから来場者は屋内展示会より少なくなるため、数千人規模と推定。",
-      "collected_at": "2026-08-29"
-    },
-    "calendar_event_id": "bdge520vkn165g6619uh88u518",
-    "last_checked": "2026-09-01"
-  },
-  {
-    "id": "海津アクアわんこマルシェ-2026-10-24",
-    "series_id": null,
-    "name": "海津アクアわんこマルシェ",
-    "prefecture": "岐阜県",
-    "venue": "木曽三川公園水郷アクアパーク 芝生広場",
-    "address": "岐阜県海津市",
-    "start_date": "2026-10-24",
-    "end_date": "2026-10-25",
-    "source_url": "https://pettena.jp/blogs/pet-outings/dog-events-tokai",
+    "end_date": "2026-10-24",
+    "source_url": "https://pets-support.com/dog-event/",
     "venue_type": "屋外の公園・河川敷",
     "admission": "無料",
     "booth_count": null,
@@ -108,11 +85,34 @@
       "status": "predicted",
       "min": 2000,
       "max": 5000,
-      "basis": "屋外公園の無料イベントとして判断。わんにゃんドーム（屋内展示場・有料2日間計1.8万人前後）と異なり、天候や通りすがり客の影響を受けやすく、規模感は小さくなる傾向。具体的な来場者実績が確認できないため、慎重に推定。",
-      "collected_at": "2026-09-01"
+      "basis": "屋外公園・無料イベント（モリコロパーク）で1日開催。屋外無料は天候や通りすがりの来訪に左右され、屋内有料展示会（わんにゃんドーム：2日間1.5〜2万人規模）と同規模とは考えられない。ブース数未明だが、公園施設の犬イベントとしては数千人規模と推定。",
+      "collected_at": "2026-10-01"
+    },
+    "calendar_event_id": "bdge520vkn165g6619uh88u518",
+    "last_checked": "2026-10-01"
+  },
+  {
+    "id": "わんワンダーフェス-木曽三川公園アクアワールド水郷パークセンター--2026-10-24",
+    "series_id": null,
+    "name": "わんワンダーフェス（木曽三川公園アクアワールド水郷パークセンター）",
+    "prefecture": "岐阜県",
+    "venue": "木曽三川公園アクアワールド水郷パークセンター",
+    "address": "岐阜県海津市海津町福江566",
+    "start_date": "2026-10-24",
+    "end_date": "2026-10-25",
+    "source_url": "https://pets-support.com/dog-event/",
+    "venue_type": "屋外の公園・河川敷",
+    "admission": "無料",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 2500,
+      "max": 6000,
+      "basis": "屋外公園・無料イベントであり、天候や通りすがりの立ち寄りに大きく左右される。ブース数が不明で、わんにゃんドーム（屋内展示場・有料2日間1.7〜1.9万人）と直接比較できないため、屋外無料イベントの典型的な規模として保守的に推定。",
+      "collected_at": "2026-10-01"
     },
     "calendar_event_id": "gnhig7064da7cifiosdh9lbe0s",
-    "last_checked": "2026-09-01"
+    "last_checked": "2026-10-01"
   },
   {
     "id": "犬市場-in-okazaki-2026-autumn-2026-11-28",
@@ -135,14 +135,14 @@
       "collected_at": "2026-08-14"
     },
     "calendar_event_id": "umsif320gclo8u7u4nebh08n88",
-    "last_checked": "2026-09-01"
+    "last_checked": "2026-10-01"
   },
   {
-    "id": "犬市場-candy-palette-in-三井アウトレットパーク-岡崎-2026-12-12",
+    "id": "犬市場-candy-palette-in-三井アウトレットパーク岡崎-2026-12-12",
     "series_id": "inuichiba",
-    "name": "犬市場 Candy palette in 三井アウトレットパーク 岡崎",
+    "name": "犬市場 Candy palette in 三井アウトレットパーク岡崎",
     "prefecture": "愛知県",
-    "venue": "三井アウトレットパーク 岡崎",
+    "venue": "三井アウトレットパーク岡崎",
     "address": "",
     "start_date": "2026-12-12",
     "end_date": "2026-12-13",
@@ -154,11 +154,11 @@
       "status": "predicted",
       "min": 3000,
       "max": 7000,
-      "basis": "商業施設内の犬市場シリーズイベントとして判断。屋内展示場の有料イベント（わんにゃんドーム級で2日間1.5〜2万人）と異なり、商業施設は通常来客が流入する一方、専有スペースは展示場より狭く、イベント目的の来場者数は抑制されやすいため、保守的に下位レンジで予測。",
-      "collected_at": "2026-08-29"
+      "basis": "商業施設内の2日間イベントとして判断。屋内展示場の有料展示会（わんにゃんドーム級で1.5～2万人規模）とは異なり、商業施設では通常来客との分離が難しく、イベント専有スペースも限定的なため、来場者数は大幅に少なくなると推定。入場料や出展ブース数が不明なため、保守的に幅を広げて設定。",
+      "collected_at": "2026-10-01"
     },
     "calendar_event_id": "n93rpa44tdgag1uvbgboaghovc",
-    "last_checked": "2026-09-01"
+    "last_checked": "2026-10-01"
   },
   {
     "id": "犬祭りテラス-2026-12-13",
@@ -181,7 +181,7 @@
       "collected_at": "2026-08-29"
     },
     "calendar_event_id": "f6cf8jkvcq367avfmontpc6kqo",
-    "last_checked": "2026-09-01"
+    "last_checked": "2026-10-01"
   },
   {
     "id": "わんにゃんドーム2027-2027-02-13",
@@ -204,7 +204,7 @@
       "collected_at": "2026-08-14"
     },
     "calendar_event_id": "vb6tb3bq3o03q475dqcjmqp4ls",
-    "last_checked": "2026-09-01"
+    "last_checked": "2026-10-01"
   },
   {
     "id": "犬祭り-テラスゲート土岐--2026-08-29",
@@ -273,7 +273,7 @@
       "collected_at": "2026-08-29"
     },
     "calendar_event_id": "4tu6mu1f6l2t78jo1uqe35onvd",
-    "last_checked": "2026-09-01"
+    "last_checked": "2026-10-01"
   },
   {
     "id": "わんてらすdogマルシェ-in-いなべ-2026-09-20",
@@ -388,7 +388,7 @@
       "collected_at": "2026-08-29"
     },
     "calendar_event_id": "l6piio4kqmglabnm9ljbcpoim0",
-    "last_checked": "2026-09-01"
+    "last_checked": "2026-10-01"
   },
   {
     "id": "よる犬祭り-meieki-parklet-2026-09-04",
@@ -480,7 +480,7 @@
       "collected_at": "2026-08-29"
     },
     "calendar_event_id": "t96aid8ap992mvnsvvmc4i78hk",
-    "last_checked": "2026-09-01"
+    "last_checked": "2026-10-01"
   },
   {
     "id": "あかつかわんこ6-2026-11-14",
@@ -504,5 +504,189 @@
     },
     "calendar_event_id": "cf7a52tj4quenorujcgh9q9tbs",
     "last_checked": "2026-09-01"
+  },
+  {
+    "id": "第16回-インターペット東京-2027-04-01",
+    "series_id": "interpets_tokyo",
+    "name": "第16回 インターペット東京",
+    "prefecture": "東京都",
+    "venue": "東京ビッグサイト",
+    "address": "東京都江東区有明3-11-1",
+    "start_date": "2027-04-01",
+    "end_date": "2027-04-04",
+    "source_url": "https://interpets.jp.messefrankfurt.com/tokyo/ja/facts-figures.html",
+    "venue_type": "屋内展示場",
+    "admission": "有料",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 25000,
+      "max": 40000,
+      "basis": "屋内展示場・有料のペットイベント。わんにゃんドーム（2日間1.7〜1.9万人）を参考にしつつ、開催期間が4日間と倍の長さであり、東京ビッグサイトという大規模会場での実施を踏まえて、保守的に2.5〜4万人と推定します。",
+      "collected_at": "2026-10-01"
+    },
+    "calendar_event_id": "9d9dva3d88q1vhdhb9q5l1keek",
+    "last_checked": "2026-10-01"
+  },
+  {
+    "id": "第56回-わんマルvison-2026-10-03",
+    "series_id": null,
+    "name": "第56回 わんマルVISON",
+    "prefecture": "三重県",
+    "venue": "VISON P3バスロータリー",
+    "address": "三重県多気郡多気町ヴィソン672番1",
+    "start_date": "2026-10-03",
+    "end_date": "2026-10-04",
+    "source_url": "https://www.kankomie.or.jp/event/43895",
+    "venue_type": "商業施設",
+    "admission": "無料",
+    "booth_count": 40,
+    "attendance": {
+      "status": "predicted",
+      "min": 2000,
+      "max": 5000,
+      "basis": "商業施設・屋外・無料のイベントであり、わんにゃんドーム（屋内展示場・有料・2日間1.5〜2万人規模）とは来場者が限定される。ブース数40程度で、通りすがりの立ち寄りを含む無料施設での開催のため、2日間計2,000〜5,000人程度と推定。",
+      "collected_at": "2026-10-01"
+    },
+    "calendar_event_id": "tg0fuev63tds852uvr7ls7948s",
+    "last_checked": "2026-10-01"
+  },
+  {
+    "id": "デンパークwithわんわんdays--2026-10-17",
+    "series_id": null,
+    "name": "デンパークwithわんわんDays！",
+    "prefecture": "愛知県",
+    "venue": "安城産業文化公園デンパーク",
+    "address": "愛知県安城市赤松町梶1",
+    "start_date": "2026-10-17",
+    "end_date": "2026-10-18",
+    "source_url": "https://pets-support.com/dog-event/",
+    "venue_type": "その他・不明",
+    "admission": "不明",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 2000,
+      "max": 6000,
+      "basis": "安城産業文化公園デンパークは屋外公園施設で、「わんわんDays」という犬向けイベント。屋外公園での無料または低額イベントは屋内有料展示会（わんにゃんドーム実績1.5〜2万人）と異なり、天候や通りすがりの立ち寄りに左右されやすく、より少人数傾向。ブース数や詳細が不明なため、保守的に幅広く予測。",
+      "collected_at": "2026-10-01"
+    },
+    "calendar_event_id": "d8k29csodisqff2ppmkhj50g0s",
+    "last_checked": "2026-10-01"
+  },
+  {
+    "id": "sala-dog-expo-2026-10-24",
+    "series_id": null,
+    "name": "SALA DOG EXPO",
+    "prefecture": "愛知県",
+    "venue": "サーラプラザ豊川",
+    "address": "愛知県豊川市豊川町知通63-1",
+    "start_date": "2026-10-24",
+    "end_date": "2026-10-25",
+    "source_url": "https://pets-support.com/dog-event/",
+    "venue_type": "商業施設",
+    "admission": "不明",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 3000,
+      "max": 7000,
+      "basis": "商業施設内での開催で、専有スペースや施設通常来客との混在を考慮。屋内有料展示場の確認済み実績（2日間1.5〜2万人）よりも来場規模は限定されると推定され、数千人程度と予測。",
+      "collected_at": "2026-10-01"
+    },
+    "calendar_event_id": "jvkt0gimmmigqboqvb1ltc3u38",
+    "last_checked": "2026-10-01"
+  },
+  {
+    "id": "わんワンダーフェス-イオンモール明和--2026-10-24",
+    "series_id": null,
+    "name": "わんワンダーフェス（イオンモール明和）",
+    "prefecture": "三重県",
+    "venue": "イオンモール明和",
+    "address": "三重県多気郡明和町中村1223",
+    "start_date": "2026-10-24",
+    "end_date": "2026-10-25",
+    "source_url": "https://pets-support.com/dog-event/",
+    "venue_type": "商業施設",
+    "admission": "無料",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 3000,
+      "max": 8000,
+      "basis": "商業施設内の無料イベント（2日間）で、イオンモール明和は中規模商業施設と推定。施設通常来客の流入が見込まれるため、目的来場者のみの屋内展示場有料イベント（わんにゃんドーム：2日間計18,872人）より来場者は少なくなると判断。ブース数不明のため保守的に幅を設定。",
+      "collected_at": "2026-10-01"
+    },
+    "calendar_event_id": "143thshlgefk5nsssljvt9g6gg",
+    "last_checked": "2026-10-01"
+  },
+  {
+    "id": "dear-dog-fes-in-もとまるパーク-2026-10-24",
+    "series_id": null,
+    "name": "DEAR DOG FES in もとまるパーク",
+    "prefecture": "岐阜県",
+    "venue": "もとまるパーク",
+    "address": "岐阜県本巣市随原201-1",
+    "start_date": "2026-10-24",
+    "end_date": "2026-10-25",
+    "source_url": "https://pets-support.com/dog-event/",
+    "venue_type": "屋外の公園・河川敷",
+    "admission": "不明",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 2000,
+      "max": 5000,
+      "basis": "屋外公園での2日間開催イベントと判断。屋内有料展示場（わんにゃんドーム級で1.5～2万人）と異なり、天候影響・通りすがり立ち寄りの不確定要素があり、ブース数や入場料の情報がないため、保守的に数千人規模で予測。",
+      "collected_at": "2026-10-01"
+    },
+    "calendar_event_id": "0vs174k8028jjico9aqugoasgs",
+    "last_checked": "2026-10-01"
+  },
+  {
+    "id": "わんワンダーフェス-イオンモール土岐--2026-10-10",
+    "series_id": null,
+    "name": "わんワンダーフェス（イオンモール土岐）",
+    "prefecture": "岐阜県",
+    "venue": "イオンモール土岐",
+    "address": "岐阜県土岐市土岐津町土岐口1372-1",
+    "start_date": "2026-10-10",
+    "end_date": "2026-10-12",
+    "source_url": "https://pets-support.com/dog-event/",
+    "venue_type": "商業施設",
+    "admission": "無料",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 3000,
+      "max": 7000,
+      "basis": "商業施設内の無料イベントで3日間開催。施設の通常来客流入の影響を受けやすく、屋内展示場の有料イベント（わんにゃんドーム級で1.5〜2万人）と比べて、イベント目的の来場者数は大幅に減少すると想定。商業施設の限定的な専有スペース、無料入場による層の広さ、3日間の分散来場を考慮した保守的推定。",
+      "collected_at": "2026-10-01"
+    },
+    "calendar_event_id": "ll8afgbqiqstnqidb3d4j7ga0g",
+    "last_checked": "2026-10-01"
+  },
+  {
+    "id": "わんこマルシェ-甚目寺観音--2026-10-04",
+    "series_id": null,
+    "name": "わんこマルシェ（甚目寺観音）",
+    "prefecture": "愛知県",
+    "venue": "甚目寺観音",
+    "address": "愛知県あま市甚目寺東門前24",
+    "start_date": "2026-10-04",
+    "end_date": "2026-10-04",
+    "source_url": "https://pets-support.com/dog-event/",
+    "venue_type": "その他・不明",
+    "admission": "不明",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 800,
+      "max": 2500,
+      "basis": "甚目寺観音は寺院境内の屋外イベントと推定。1日間開催で、ブース数や入場料などの詳細情報がないため、屋外ペットイベントの一般的な規模を想定し、通りすがりの立ち寄りを含めた保守的な範囲を設定しました。",
+      "collected_at": "2026-10-01"
+    },
+    "calendar_event_id": "mrvdc5k294a7olsdu959ulnopc",
+    "last_checked": "2026-10-01"
   }
 ]
