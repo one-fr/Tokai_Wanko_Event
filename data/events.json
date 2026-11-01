@@ -135,14 +135,14 @@
       "collected_at": "2026-08-14"
     },
     "calendar_event_id": "umsif320gclo8u7u4nebh08n88",
-    "last_checked": "2026-10-01"
+    "last_checked": "2026-11-01"
   },
   {
-    "id": "犬市場-candy-palette-in-三井アウトレットパーク岡崎-2026-12-12",
+    "id": "犬市場-candy-palette-in-三井アウトレットパーク-岡崎-2026-12-12",
     "series_id": "inuichiba",
-    "name": "犬市場 Candy palette in 三井アウトレットパーク岡崎",
+    "name": "犬市場 Candy palette in 三井アウトレットパーク 岡崎",
     "prefecture": "愛知県",
-    "venue": "三井アウトレットパーク岡崎",
+    "venue": "三井アウトレットパーク 岡崎",
     "address": "",
     "start_date": "2026-12-12",
     "end_date": "2026-12-13",
@@ -154,11 +154,11 @@
       "status": "predicted",
       "min": 3000,
       "max": 7000,
-      "basis": "商業施設内の2日間イベントとして判断。屋内展示場の有料展示会（わんにゃんドーム級で1.5～2万人規模）とは異なり、商業施設では通常来客との分離が難しく、イベント専有スペースも限定的なため、来場者数は大幅に少なくなると推定。入場料や出展ブース数が不明なため、保守的に幅を広げて設定。",
-      "collected_at": "2026-10-01"
+      "basis": "商業施設（三井アウトレットパーク）での開催のため、専有スペースは屋内展示場より狭く、イベント目的の来場者は限定的と推定。施設の通常来客の流入がある一方で、わんにゃんドーム（屋内有料展示会で2日間1.5〜2万人）ほどの規模にはならないと考えられます。",
+      "collected_at": "2026-11-01"
     },
     "calendar_event_id": "n93rpa44tdgag1uvbgboaghovc",
-    "last_checked": "2026-10-01"
+    "last_checked": "2026-11-01"
   },
   {
     "id": "犬祭りテラス-2026-12-13",
@@ -181,7 +181,7 @@
       "collected_at": "2026-08-29"
     },
     "calendar_event_id": "f6cf8jkvcq367avfmontpc6kqo",
-    "last_checked": "2026-10-01"
+    "last_checked": "2026-11-01"
   },
   {
     "id": "わんにゃんドーム2027-2027-02-13",
@@ -204,7 +204,7 @@
       "collected_at": "2026-08-14"
     },
     "calendar_event_id": "vb6tb3bq3o03q475dqcjmqp4ls",
-    "last_checked": "2026-10-01"
+    "last_checked": "2026-11-01"
   },
   {
     "id": "犬祭り-テラスゲート土岐--2026-08-29",
@@ -388,7 +388,7 @@
       "collected_at": "2026-08-29"
     },
     "calendar_event_id": "l6piio4kqmglabnm9ljbcpoim0",
-    "last_checked": "2026-10-01"
+    "last_checked": "2026-11-01"
   },
   {
     "id": "よる犬祭り-meieki-parklet-2026-09-04",
@@ -437,27 +437,27 @@
     "last_checked": "2026-09-01"
   },
   {
-    "id": "清洲城ドッグマルシェ-paw-wow-market-2026-10-31",
+    "id": "第5回-清洲城ドッグマルシェ-paw-wow-market-2026-10-31",
     "series_id": null,
-    "name": "清洲城ドッグマルシェ PAW WOW MARKET",
+    "name": "第5回 清洲城ドッグマルシェ PAW WOW MARKET",
     "prefecture": "愛知県",
-    "venue": "清洲城 五条川水辺の散策路",
-    "address": "愛知県清須市一場",
+    "venue": "清洲城 五条川沿い散策路",
+    "address": "愛知県清須市朝日城屋敷1-1",
     "start_date": "2026-10-31",
     "end_date": "2026-11-01",
-    "source_url": "https://pets-support.com/dog-event/",
+    "source_url": "https://pettena.jp/blogs/pet-outings/dog-events-tokai",
     "venue_type": "屋外の公園・河川敷",
-    "admission": "不明",
+    "admission": "無料",
     "booth_count": null,
     "attendance": {
       "status": "predicted",
-      "min": 1500,
-      "max": 4000,
-      "basis": "屋外の河川敷散策路開催であり、天候に大きく左右されるため、わんにゃんドーム（屋内展示場・有料・1.5～2万人）との直接比較は不適切。屋外無料～低料金イベントは通常、数千人規模にとどまることが多いため保守的に見積もり。",
-      "collected_at": "2026-08-29"
+      "min": 3000,
+      "max": 7000,
+      "basis": "屋外河川敷・無料開催のため、屋内有料展示会（わんにゃんドーム級1.5〜2万人）とは異なり、天候変動や通りすがり立ち寄りの影響を受けやすい。清洲城という地域観光地での開催で一定の集客見込みはあるが、無料屋外イベントの規模感から2日間で数千人程度と推定。",
+      "collected_at": "2026-11-01"
     },
     "calendar_event_id": "afis55t45r6kivl7oku929ajqg",
-    "last_checked": "2026-09-01"
+    "last_checked": "2026-11-01"
   },
   {
     "id": "木曽三川わんこマルシェvol-28-2026-10-03",
@@ -490,20 +490,20 @@
     "venue": "赤塚山公園 あかつかテラス",
     "address": "愛知県豊川市市田町東堤上1-30",
     "start_date": "2026-11-14",
-    "end_date": "2026-11-14",
+    "end_date": "2026-11-15",
     "source_url": "https://pets-support.com/dog-event/",
     "venue_type": "屋外の公園・河川敷",
     "admission": "不明",
     "booth_count": null,
     "attendance": {
       "status": "predicted",
-      "min": 800,
-      "max": 2500,
-      "basis": "屋外公園の1日開催で、入場料・ブース数の詳細は不明。屋外無料イベントは天候や通りすがりの立ち寄りに左右されやすく、屋内有料展示会と比べ来場者数は大きく減少する傾向。保守的に見積もり。",
-      "collected_at": "2026-09-01"
+      "min": 2000,
+      "max": 5000,
+      "basis": "屋外公園での2日間開催と想定。屋内有料展示場（わんにゃんドーム：2日間1.7〜1.9万人）と異なり、屋外無料/低料金イベントは天候影響が大きく、通りすがり層も含まれるため規模は小さくなりやすい。ブース数や具体的な昨年実績が不明なため、保守的に2,000〜5,000人の幅で予測。",
+      "collected_at": "2026-11-01"
     },
     "calendar_event_id": "cf7a52tj4quenorujcgh9q9tbs",
-    "last_checked": "2026-09-01"
+    "last_checked": "2026-11-01"
   },
   {
     "id": "第16回-インターペット東京-2027-04-01",
@@ -526,7 +526,7 @@
       "collected_at": "2026-10-01"
     },
     "calendar_event_id": "9d9dva3d88q1vhdhb9q5l1keek",
-    "last_checked": "2026-10-01"
+    "last_checked": "2026-11-01"
   },
   {
     "id": "第56回-わんマルvison-2026-10-03",
@@ -688,5 +688,396 @@
     },
     "calendar_event_id": "mrvdc5k294a7olsdu959ulnopc",
     "last_checked": "2026-10-01"
+  },
+  {
+    "id": "wandarake-marche-2026-12-12",
+    "series_id": "wandarake",
+    "name": "wandarake marche",
+    "prefecture": "愛知県",
+    "venue": "富浜緑地",
+    "address": "愛知県弥富市富浜1丁目1番地",
+    "start_date": "2026-12-12",
+    "end_date": "2026-12-13",
+    "source_url": "https://www.wandarake.buddys.life/",
+    "venue_type": "屋外の公園・河川敷",
+    "admission": "有料",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 4000,
+      "max": 9000,
+      "basis": "屋外公園での2日間有料イベント。屋内展示場のわんにゃんドーム（2日間1.5〜2万人）と異なり、天候や通りすがりの影響を受けやすく、専有スペースの屋外形態は来場者数が大幅に少なくなる傾向。ブース数等の詳細が不明なため、保守的に幅を広げ推定。",
+      "collected_at": "2026-11-01"
+    },
+    "calendar_event_id": "as91rb89ib925qi2d04bl53n9k",
+    "last_checked": "2026-11-01"
+  },
+  {
+    "id": "庄内緑地-ドッグランサイド-愛犬マルシェ-2026-11-07",
+    "series_id": null,
+    "name": "庄内緑地 ドッグランサイド 愛犬マルシェ",
+    "prefecture": "愛知県",
+    "venue": "庄内緑地 ドッグランエリア",
+    "address": "愛知県名古屋市",
+    "start_date": "2026-11-07",
+    "end_date": "2026-11-07",
+    "source_url": "https://wannyan-smile.com/column-list/c1/",
+    "venue_type": "屋外の公園・河川敷",
+    "admission": "不明",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 800,
+      "max": 2500,
+      "basis": "屋外公園のドッグランサイド開催で1日間のイベント。わんにゃんドーム（屋内有料展示場2日間で1.5〜2万人規模）と異なり、屋外公園・河川敷は天候に左右され通りすがりの立ち寄りも含まれるため、規模は大幅に小さくなると判断。ブース数未把握でイベント規模の詳細が不明なため、保守的に広い幅で予測。",
+      "collected_at": "2026-11-01"
+    },
+    "calendar_event_id": "3v5glp5nu6o4fpgq2907h87a7c",
+    "last_checked": "2026-11-01"
+  },
+  {
+    "id": "犬ハピ-vol-9-2026-11-08",
+    "series_id": null,
+    "name": "犬ハピ Vol.9",
+    "prefecture": "愛知県",
+    "venue": "豊橋競輪場",
+    "address": "愛知県豊橋市東田町87",
+    "start_date": "2026-11-08",
+    "end_date": "2026-11-08",
+    "source_url": "https://magazine.cainz.com/wanqol/articles/japan_dogevent_2026",
+    "venue_type": "その他・不明",
+    "admission": "無料",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 2000,
+      "max": 8000,
+      "basis": "競輪場は屋外または半屋外の公開スペースで、無料イベントのため通りすがりの来場者も含まれやすい。屋内有料展示会（わんにゃんドーム級）とは異なり、天候や訪問動機が多様であることから、来場者数の変動幅が大きい。ブース数が不明であり詳細情報に乏しいため、保守的に幅を広げて推定。",
+      "collected_at": "2026-11-01"
+    },
+    "calendar_event_id": "mdhjev2die5n1t4if43ut1qgeg",
+    "last_checked": "2026-11-01"
+  },
+  {
+    "id": "わんワンダーフェス-戸田川緑地--2026-11-01",
+    "series_id": null,
+    "name": "わんワンダーフェス（戸田川緑地）",
+    "prefecture": "愛知県",
+    "venue": "戸田川緑地",
+    "address": "愛知県名古屋市港区春田野",
+    "start_date": "2026-11-01",
+    "end_date": "2026-11-01",
+    "source_url": "https://pets-support.com/dog-event/",
+    "venue_type": "屋外の公園・河川敷",
+    "admission": "不明",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 1500,
+      "max": 4000,
+      "basis": "屋外の公園開催で、屋内有料展示会と異なり天候や通りすがりの来場者の影響を受けやすい。ブース数不明だが、同規模イベントの実績から屋外無料公園イベントは数千人規模と判断。",
+      "collected_at": "2026-11-01"
+    },
+    "calendar_event_id": "1d7u0khvf97v1n10bstut31hoc",
+    "last_checked": "2026-11-01"
+  },
+  {
+    "id": "わんこマルシェ-甚目寺観音--2026-11-01",
+    "series_id": null,
+    "name": "わんこマルシェ（甚目寺観音）",
+    "prefecture": "愛知県",
+    "venue": "甚目寺観音",
+    "address": "愛知県あま市甚目寺東門前24",
+    "start_date": "2026-11-01",
+    "end_date": "2026-11-01",
+    "source_url": "https://pets-support.com/dog-event/",
+    "venue_type": "その他・不明",
+    "admission": "不明",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 1500,
+      "max": 4000,
+      "basis": "甚目寺観音は寺院施設で、屋外の境内を活用したイベント開催と推定されます。入場料が不明で通常は無料開放の寺院であり、ブース数や来場者数の詳細情報がないため、類似の屋外・無料イベント規模（数千人程度）から保守的に予測しました。",
+      "collected_at": "2026-11-01"
+    },
+    "calendar_event_id": "hbef60psqtjq2eo415fchl0aj0",
+    "last_checked": "2026-11-01"
+  },
+  {
+    "id": "わんワンダーフェス-ナゴヤハウジングセンター春日井会場--2026-11-08",
+    "series_id": null,
+    "name": "わんワンダーフェス（ナゴヤハウジングセンター春日井会場）",
+    "prefecture": "愛知県",
+    "venue": "ナゴヤハウジングセンター 春日井会場",
+    "address": "愛知県春日井市西山町2-8-1",
+    "start_date": "2026-11-08",
+    "end_date": "2026-11-08",
+    "source_url": "https://kimimo.jp/wanwonderfes/",
+    "venue_type": "商業施設",
+    "admission": "不明",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 1500,
+      "max": 4500,
+      "basis": "商業施設内のペットイベント（1日間）で、確認済みわんにゃんドーム（屋内展示場・有料2日間で1.5〜2万人）との比較では、商業施設は専有スペースが限定され施設通常客との棲み分けも生じるため、規模を大きく下方修正。ブース数や入場料が未確認のため幅を広めに設定しました。",
+      "collected_at": "2026-11-01"
+    },
+    "calendar_event_id": "jv2kvchsf1g8st93afkvrpsuik",
+    "last_checked": "2026-11-01"
+  },
+  {
+    "id": "犬祭り-ぎふワールド-ローズガーデン-2026-11-23",
+    "series_id": null,
+    "name": "犬祭り@ぎふワールド・ローズガーデン",
+    "prefecture": "岐阜県",
+    "venue": "ぎふワールド・ローズガーデン",
+    "address": "",
+    "start_date": "2026-11-23",
+    "end_date": "2026-11-23",
+    "source_url": "https://inumatsuri.com/eventinfo/",
+    "venue_type": "屋外の公園・河川敷",
+    "admission": "不明",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 2000,
+      "max": 5000,
+      "basis": "屋外公園での1日間開催の犬イベント。屋内有料展示会（わんにゃんドーム級で1.5〜2万人）と異なり、天候や通路の制約から規模が縮小する傾向を考慮し、保守的に数千人規模と推定。",
+      "collected_at": "2026-11-01"
+    },
+    "calendar_event_id": "dso5t9tftt0612kah707dkt920",
+    "last_checked": "2026-11-01"
+  },
+  {
+    "id": "inuichiba-selections-in-三井アウトレットパーク岡崎-2026-11-07",
+    "series_id": null,
+    "name": "INUICHIBA Selections+ in 三井アウトレットパーク岡崎",
+    "prefecture": "愛知県",
+    "venue": "三井アウトレットパーク 岡崎",
+    "address": "",
+    "start_date": "2026-11-07",
+    "end_date": "2026-11-08",
+    "source_url": "https://magazine.cainz.com/wanqol/articles/tokai_dogevent_november_2026",
+    "venue_type": "商業施設",
+    "admission": "無料",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 3000,
+      "max": 7000,
+      "basis": "商業施設内の無料犬イベント。わんにゃんドーム（屋内有料展示場）の実績18,872人（2日間）とは異なり、商業施設の通常来客が流入する一方で、イベント専有スペースは展示場より狭く限定的と推定。屋外・無料イベント相当の規模感を参考に、保守的な幅で予測。",
+      "collected_at": "2026-11-01"
+    },
+    "calendar_event_id": "2gfbnpho0barqulm136lno8f6c",
+    "last_checked": "2026-11-01"
+  },
+  {
+    "id": "わんわん運動会-2026-11-07",
+    "series_id": null,
+    "name": "わんわん運動会",
+    "prefecture": "愛知県",
+    "venue": "観光農園 花ひろば",
+    "address": "愛知県知多郡",
+    "start_date": "2026-11-07",
+    "end_date": "2026-11-08",
+    "source_url": "https://magazine.cainz.com/wanqol/articles/tokai_dogevent_november_2026",
+    "venue_type": "その他・不明",
+    "admission": "不明",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 2000,
+      "max": 6000,
+      "basis": "農園開催で会場性質・入場料が不明のため、屋外無料イベントと推定。屋外イベントは天候や通りすがり利用に左右されやすく、屋内有料展示会よりも来場者が少なくなる傾向。規模感が不明なため保守的に広めの幅で予測。",
+      "collected_at": "2026-11-01"
+    },
+    "calendar_event_id": "s9rmhgi3gp0rfjo9nv3he7m5do",
+    "last_checked": "2026-11-01"
+  },
+  {
+    "id": "もふもふ犬まつり-2026-11-08",
+    "series_id": null,
+    "name": "もふもふ犬まつり",
+    "prefecture": "岐阜県",
+    "venue": "さい川さくら公園",
+    "address": "岐阜県大垣市",
+    "start_date": "2026-11-08",
+    "end_date": "2026-11-08",
+    "source_url": "https://www.instagram.com/mofumofuken_maturi/",
+    "venue_type": "屋外の公園・河川敷",
+    "admission": "不明",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 2000,
+      "max": 5000,
+      "basis": "屋外公園での1日開催で、入場料や出展規模の情報がない。屋外無料イベントは天候に左右されやすく、通りすがりの立ち寄りもあるため、屋内有料展示会（わんにゃんドーム級）の1日分18,872人の1/3～1/9程度にとどまると保守的に推定。",
+      "collected_at": "2026-11-01"
+    },
+    "calendar_event_id": "er90t0tql7pmo6vdj6pf129a4o",
+    "last_checked": "2026-11-01"
+  },
+  {
+    "id": "わんのみやフェスティバル-final--2026-11-15",
+    "series_id": null,
+    "name": "わんのみやフェスティバル～FINAL～",
+    "prefecture": "愛知県",
+    "venue": "萩公園",
+    "address": "愛知県一宮市",
+    "start_date": "2026-11-15",
+    "end_date": "2026-11-15",
+    "source_url": "https://doghuglife.com/posts/dog-event-2026-11-zenkoku",
+    "venue_type": "屋外の公園・河川敷",
+    "admission": "不明",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 800,
+      "max": 3500,
+      "basis": "屋外公園での1日間開催イベント。屋内有料展示会（わんにゃんドーム級で2日間1.5～2万人）と異なり、天候に左右され通りすがりの立ち寄りも含まれるため、同規模の屋外無料イベントは数千人規模にとどまることが多いと判断。詳細な情報不足のため幅を広めに設定。",
+      "collected_at": "2026-11-01"
+    },
+    "calendar_event_id": "lqh5ok1qsalft98ikkckud54h8",
+    "last_checked": "2026-11-01"
+  },
+  {
+    "id": "mikidogfes-犬の運動会-マルシェ-2026-11-15",
+    "series_id": null,
+    "name": "mikidogfes 犬の運動会&マルシェ",
+    "prefecture": "愛知県",
+    "venue": "油ヶ淵水辺公園 自然ふれあい生態園",
+    "address": "愛知県安城市東端町丸ノ内6-1",
+    "start_date": "2026-11-15",
+    "end_date": "2026-11-15",
+    "source_url": "https://magazine.cainz.com/wanqol/articles/tokai_dogevent_november_2026",
+    "venue_type": "屋外の公園・河川敷",
+    "admission": "不明",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 800,
+      "max": 2000,
+      "basis": "屋外の公園（油ヶ淵水辺公園）での1日間の犬イベントと推定。屋外無料イベントは天候に左右される通りすがり来場を含むため、屋内有料展示会（わんにゃんドーム2日間1.5～2万人級）とは大きく異なり、1日開催では千～数千人規模にとどまると予測。",
+      "collected_at": "2026-11-01"
+    },
+    "calendar_event_id": "jjhvaprr2cvkmkkqo8cus7o11o",
+    "last_checked": "2026-11-01"
+  },
+  {
+    "id": "第57回-わんマル各務原-in-oasis-park-2026-11-03",
+    "series_id": null,
+    "name": "第57回 わんマル各務原 in Oasis Park",
+    "prefecture": "岐阜県",
+    "venue": "河川環境楽園 オアシスパーク",
+    "address": "岐阜県各務原市",
+    "start_date": "2026-11-03",
+    "end_date": "2026-11-03",
+    "source_url": "https://magazine.cainz.com/wanqol/articles/tokai_dogevent_november_2026",
+    "venue_type": "屋外の公園・河川敷",
+    "admission": "不明",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 2000,
+      "max": 5000,
+      "basis": "屋外の公園・河川敷での1日開催。わんにゃんドーム（屋内展示場・有料・2日間で1.5〜2万人規模）と異なり、天候の影響を受けやすく、通りすがりの立ち寄りが含まれる屋外無料イベントとして推定。同規模の犬イベントでも屋外は来場者が大幅に少なくなる傾向から、保守的に数千人規模と予測。",
+      "collected_at": "2026-11-01"
+    },
+    "calendar_event_id": "s6cmd9pc1uhlrj3319873bl3cg",
+    "last_checked": "2026-11-01"
+  },
+  {
+    "id": "わんワンダーフェス-イオンモール大垣--2026-11-14",
+    "series_id": null,
+    "name": "わんワンダーフェス（イオンモール大垣）",
+    "prefecture": "岐阜県",
+    "venue": "イオンモール大垣",
+    "address": "",
+    "start_date": "2026-11-14",
+    "end_date": "2026-11-15",
+    "source_url": "https://kimimo.jp/wanwonderfes/",
+    "venue_type": "商業施設",
+    "admission": "不明",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 2000,
+      "max": 5000,
+      "basis": "商業施設内のペットイベントと判断。屋内有料展示場のわんにゃんドーム（2日間1.5〜2万人）と異なり、商業施設は専有スペースが限定的で、施設の通常来客との重複も考慮すると、イベント目的の来場者はより少なくなりやすいと想定。詳細情報（入場料、ブース数）が未確認のため幅を広げて推定。",
+      "collected_at": "2026-11-01"
+    },
+    "calendar_event_id": "b8hpd2gfbgj9h8i3687vcva6fg",
+    "last_checked": "2026-11-01"
+  },
+  {
+    "id": "わんワンダーフェス-イオンモール土岐--2026-12-05",
+    "series_id": null,
+    "name": "わんワンダーフェス（イオンモール土岐）",
+    "prefecture": "岐阜県",
+    "venue": "イオンモール土岐",
+    "address": "",
+    "start_date": "2026-12-05",
+    "end_date": "2026-12-06",
+    "source_url": "https://kimimo.jp/wanwonderfes/",
+    "venue_type": "商業施設",
+    "admission": "不明",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 3000,
+      "max": 7000,
+      "basis": "商業施設内のペットイベントと判断。施設の通常来客が流入するため、屋内展示場の有料イベント（わんにゃんドーム級2日間1.5～2万人）と比べると来場者は少なくなりやすく、また専有スペースが展示場より狭いと推定されるため、保守的に3,000～7,000人の幅で予測しました。",
+      "collected_at": "2026-11-01"
+    },
+    "calendar_event_id": "prbegne35ggm9hshcsq3ljt710",
+    "last_checked": "2026-11-01"
+  },
+  {
+    "id": "フラリエくらしフェスタ-with-dog-2026-11-12",
+    "series_id": null,
+    "name": "フラリエくらしフェスタ with DOG",
+    "prefecture": "愛知県",
+    "venue": "久屋大通庭園フラリエ",
+    "address": "愛知県名古屋市中区大須4-4-1",
+    "start_date": "2026-11-12",
+    "end_date": "2026-11-12",
+    "source_url": "https://cheriee.jp/articles/40829/",
+    "venue_type": "商業施設",
+    "admission": "無料",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 1500,
+      "max": 3500,
+      "basis": "商業施設（久屋大通庭園フラリエ）の無料イベント、1日間開催。商業施設内の専有スペースは屋内展示場より限定的で、ペット関連イベント目的の来場者は施設通常客より少なくなりやすいと判断。ブース規模が不明なため、保守的に幅広く設定。",
+      "collected_at": "2026-11-01"
+    },
+    "calendar_event_id": "bp6lfgbcjj7c44t8lm4tgltj0g",
+    "last_checked": "2026-11-01"
+  },
+  {
+    "id": "第2回-smileワン-わんマルシェ-2026-11-14",
+    "series_id": null,
+    "name": "第2回 Smileワン！わんマルシェ",
+    "prefecture": "愛知県",
+    "venue": "白谷海浜公園",
+    "address": "愛知県田原市",
+    "start_date": "2026-11-14",
+    "end_date": "2026-11-15",
+    "source_url": "https://magazine.cainz.com/wanqol/articles/japan_dogevent_2026",
+    "venue_type": "屋外の公園・河川敷",
+    "admission": "不明",
+    "booth_count": null,
+    "attendance": {
+      "status": "predicted",
+      "min": 2000,
+      "max": 5000,
+      "basis": "屋外の公園での開催で、天候や通りすがりの立ち寄りの影響を受けやすい形態と判断。具体的なブース数や過去同地での実績が不明のため、同規模の屋外無料イベント事例から保守的に推定しました。",
+      "collected_at": "2026-11-01"
+    },
+    "calendar_event_id": "bti4tfhsrh9otdo6lo3g4qkrvs",
+    "last_checked": "2026-11-01"
   }
 ]
